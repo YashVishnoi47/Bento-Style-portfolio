@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+
+
+.commonWidth{
+    width: 87.5%;
+    max-width: 1340px;
+}
+
+.subHeadingGradiant {
+    background: #CDCDCD; /* fallback */
+    background: linear-gradient(180deg, rgba(205, 205, 205, 1) 0%, rgba(103, 103, 103, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* fallback for browsers that don't support background-clip */
+}
+
+.cardBgGradiant{
+    background: #000;
+    background: linear-gradient(180deg,rgba(0, 0, 0, 0.06) 0%, rgba(255, 255, 255, 0.06) 100%);
+}
+
+
+
+.bgCardImage{
+    background-image: url('../public/Home/BgPolyDesgine.svg');
+    background-size: cover;    
+    background-position: center;   
+    background-repeat: no-repeat; 
+    background-attachment: scroll; 
+}
