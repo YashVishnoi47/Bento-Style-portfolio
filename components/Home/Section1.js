@@ -3,7 +3,7 @@ import CTAButton from "../Common/CTA Button";
 
 const Section1 = () => {
   return (
-    <div className="commonWidth border-neutral-800 flex flex-col gap-4 justify-center items-center rounded-2xl h-[450px] shadow-2xl shadow-white/10">
+    <div className="commonWidth border border-neutral-800 flex flex-col gap-4 justify-center items-center rounded-2xl h-[450px]">
       {/* Heading */}
       <div className="w-full flex flex-col justify-center items-center">
         <h1 className="lg:text-[40px] md:text:[35px] text-[20px]  text-center font-black text-[#A78BFA]">

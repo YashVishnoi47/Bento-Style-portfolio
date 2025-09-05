@@ -36,7 +36,7 @@ const Section2 = () => {
       </div>
 
       {/* Right */}
-      <div className="lg:w-[55.6%] w-full h-[450px] rounded-2xl border-white cardBgGradiant"></div>
+      <div className="lg:w-[55.6%] w-full h-[450px] rounded-2xl border border-neutral-800 cardBgGradiant"></div>
     </div>
   );
 };
