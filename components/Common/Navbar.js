@@ -1,15 +1,17 @@
 "use client";
 import React, { useRef } from "react";
 import CTAButton from "./CTA Button";
-import { MdOutlineDarkMode } from "react-icons/md";
 import MenuButton from "./MenuButton";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
 import { useHomePageStore } from "@/stores/HomePageStore";
 
 const Navbar = () => {
+  gsap.registerPlugin(ScrollTrigger);
   const { open } = useHomePageStore();
   const NavbarRef = useRef(null);
+  const MObNavbarRef = useRef(null);
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -48,7 +50,7 @@ const Navbar = () => {
   return (
     <div
       ref={NavbarRef}
-      className="h-[100px] mt-5 commonWidth px-[35px] flex justify-between items-center rounded-2xl bg-white/5  border-neutral-800 backdrop-blur-2xl"
+      className="nav h-[100px] mt-5 commonWidth px-[35px] flex justify-between items-center rounded-2xl bg-white/5  border-neutral-800 backdrop-blur-2xl"
     >
       <div className="navsection-1 w-full h-full flex justify-between items-center">
         {/* Left Section */}
@@ -65,7 +67,10 @@ const Navbar = () => {
 
         {/* Middle Section */}
         <div className="w-[33%] h-full hidden lg:flex justify-center items-center  border-red-500">
-          <div className="flex justify-center items-center px-6 py-2 bg--800 rounded-lg">
+          <div
+            ref={MObNavbarRef}
+            className="flex justify-center items-center px-6 py-2 bg--800 rounded-lg "
+          >
             {["Home", "About", "Projects", "Services"].map((item, idx) => (
               <p
                 className="font-medium cursor-pointer px-4 py-2.5 flex justify-center items-center transition-all duration-300 ease-in-out rounded-lg hover:bg-neutral-800 border-white select-none"
