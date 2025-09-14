@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-
+*{
+    scroll-behavior: smooth;
+}
 
 .commonWidth{
     width: 87.5%;
@@ -14,6 +16,13 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent; /* fallback for browsers that don't support background-clip */
+}
+
+.subHeadingGradiant2 {
+    color: transparent;
+    background: linear-gradient(180deg, rgba(167, 139, 250, 0.9) 0%, rgba(167, 139, 250, 0.75) 75%, rgba(0, 0, 0, 0.5) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
 

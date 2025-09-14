@@ -50,11 +50,11 @@ const Navbar = () => {
   return (
     <div
       ref={NavbarRef}
-      className="nav h-[100px] mt-5 commonWidth px-[35px] flex justify-between items-center rounded-2xl bg-white/5  border-neutral-800 backdrop-blur-2xl"
+      className="nav fixed z-95 h-[100px] mt-5 commonWidth px-[35px] flex justify-between items-center rounded-2xl bg-white/5 border-neutral-800 backdrop-blur-2xl"
     >
       <div className="navsection-1 w-full h-full flex justify-between items-center">
         {/* Left Section */}
-        <div className="lg:w-[33%] w-[50%] h-full gap-4 flex justify-start items-center  border-red-500">
+        <div className="navAni-1 lg:w-[33%] w-[50%] h-full gap-4 flex justify-start items-center  border-red-500">
           {/* Image */}
           <div className="w-16 h-16 rounded-full bg-neutral-400 shrink-0 cursor-pointer"></div>
 
@@ -66,7 +66,7 @@ const Navbar = () => {
         </div>
 
         {/* Middle Section */}
-        <div className="w-[33%] h-full hidden lg:flex justify-center items-center  border-red-500">
+        <div className="navAni-1 w-[33%] h-full hidden lg:flex justify-center items-center  border-red-500">
           <div
             ref={MObNavbarRef}
             className="flex justify-center items-center px-6 py-2 bg--800 rounded-lg "
@@ -83,9 +83,9 @@ const Navbar = () => {
         </div>
 
         {/* Right Section */}
-        <div className="w-[33%] h-full hidden lg:flex gap-6 justify-end items-center border-red-500">
+        <div className="navAni-1 w-[33%] h-full hidden lg:flex gap-6 justify-end items-center border-red-500">
           {/* <MdOutlineDarkMode className="text-white text-2xl rounded-full cursor-pointer" /> */}
-          <CTAButton text={"Let's Work"} />
+          <CTAButton text={"Work with me"} />
         </div>
 
         <MenuButton />

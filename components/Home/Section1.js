@@ -3,7 +3,7 @@ import CTAButton from "../Common/CTA Button";
 
 const Section1 = () => {
   return (
-    <div className="commonWidth border border-neutral-800 flex flex-col gap-4 justify-center items-center rounded-2xl h-[450px]">
+    <div className="commonWidth mt-[160px] border border-neutral-800 flex flex-col gap-4 justify-center items-center rounded-2xl h-[450px]">
       {/* Heading */}
       <div className="w-full flex flex-col justify-center items-center">
         <h1 className="lg:text-[40px] md:text:[35px] text-[20px]  text-center font-black text-[#A78BFA]">
@@ -21,10 +21,12 @@ const Section1 = () => {
 
       {/* CTA */}
       <div className="mt-6">
-        <CTAButton text="Let's Connect" />
+        <CTAButton text="Work With Me" />
       </div>
     </div>
   );
 };
 
 export default Section1;
+
+// mt-[160px]
