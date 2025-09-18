@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import CTAButton from "./CTA Button";
@@ -6,6 +7,7 @@ import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
+import { motion } from "framer-motion";
 import {
   Tooltip,
   TooltipContent,
@@ -25,7 +27,7 @@ const Footer = () => {
 
       {/* Main content */}
       <div className="w-full h-full flex flex-col justify-center items-center relative z-90 gap-30">
-        {/* Top */}
+        {/* Heading and logo */}
         <div className="lg:w-[70%] w-full h-[400px] flex flex-col gap-8 justify-center items-center mt-5">
           {/* Logo */}
           <Image
@@ -37,22 +39,38 @@ const Footer = () => {
           />
           {/* Heading */}
           <div className="w-full flex flex-col justify-center items-center">
-            <h1 className="lg:text-[40px] md:text:[35px] text-[20px]  text-center font-black">
+            <motion.h1
+              initial={{ opacity: 0, x: 200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="lg:text-[40px] md:text:[35px] text-[20px]  text-center font-black"
+            >
               Turning ideas into <span className="text-[#A78BFA]">designs</span>{" "}
               and <span className="text-[#A78BFA]">code</span>
-            </h1>
-            <h1 className="lg:text-[40px] md:text-[30px] text-[20px] text-center font-black">
+            </motion.h1>
+
+            <motion.h1
+              initial={{ opacity: 0, x: -200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="lg:text-[40px] md:text-[30px] text-[20px] text-center font-black"
+            >
               your next <span className="text-[#A78BFA]">project</span> starts
               here
-            </h1>
+            </motion.h1>
           </div>
+
           <Magnetic intensity={0.6} range={400}>
             <CTAButton text={"Work with me"} />
           </Magnetic>
         </div>
-
-        {/* Bottom */}
-        <div className="lg:w-[80%] w-full h-[280px] flex flex-col justify-between items-center border--800 rounded-lg relative">
+        {/* Blur Box (info) */}
+        <motion.div
+          initial={{ y: 200, opacity: 0 }}
+          transition={{ duration: 0.7 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          className="lg:w-[80%] w-full h-[280px] flex flex-col justify-between items-center border--800 rounded-lg relative"
+        >
           <div className="w-full h-full absolute z-0 bg-[#6E6E6E]/10 backdrop-blur-sm" />
 
           {/* Top */}
@@ -88,12 +106,12 @@ const Footer = () => {
               © 2025 Yash Vishnoi. All rights reserved
             </p>
 
-            <div className="text-sm text-left w-1/2 text-[#b6b6b6] flex justify-end items-center gap-4">
+            <div className="text-sm text-left w-1/2 text-[#b6b6b6] flex justify-end items-center gap-2">
               {[
                 {
                   icon: (
                     <FaLinkedinIn
-                      size={18}
+                      size={15}
                       className="hover:text-white transition-all duration-300 ease-in-out"
                     />
                   ),
@@ -103,7 +121,7 @@ const Footer = () => {
                 {
                   icon: (
                     <FaGithub
-                      size={18}
+                      size={15}
                       className="hover:text-white transition-all duration-300 ease-in-out"
                     />
                   ),
@@ -113,17 +131,22 @@ const Footer = () => {
                 {
                   icon: (
                     <FaXTwitter
-                      size={18}
+                      size={15}
                       className="hover:text-white transition-all duration-300 ease-in-out"
                     />
                   ),
                   link: "https://x.com/Yash_Vishnoi7",
-                  name: "Twitter(X)",
+                  name: "Twitter",
                 },
               ].map((item, idx) => (
                 <Tooltip key={idx}>
                   <TooltipTrigger>
-                    <Link href={item.link} target="_blank">
+                    <Link
+                      className="flex justify-center items-center gap-2 rounded-sm bg-white/5 px-2 py-1"
+                      href={item.link}
+                      target="_blank"
+                    >
+                      <span className="text-xs">{item.name}</span>
                       {item.icon}
                     </Link>
                   </TooltipTrigger>
@@ -134,7 +157,7 @@ const Footer = () => {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
