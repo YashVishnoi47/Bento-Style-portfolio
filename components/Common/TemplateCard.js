@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const TemplateCard = ({ item, idx }) => {
@@ -22,9 +23,10 @@ const TemplateCard = ({ item, idx }) => {
           return (
             <div
               key={idx}
-              className="text-xs text-bold bg-white/10 hover:bg-black/20 px-2 py-2 select-none rounded-lg transition-all dura2ion-300 ease-in-out text-center"
+              className="text-xs text-bold flex justify-center items-center gap-2 bg-white/10 hover:bg-black/20 px-2 py-2 select-none rounded-lg transition-all dura2ion-300 ease-in-out text-center"
             >
-              {item}
+              <Image src={item.icon} width={15} height={15} alt="icon" />
+              {item.name}
             </div>
           );
         })}

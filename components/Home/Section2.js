@@ -1,12 +1,34 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import { FaRegCopy } from "react-icons/fa6";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+import EmailCopy from "../Common/EmailCopy";
 
 const Section2 = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    gsap.from(".sec2ref", {
+      y: 50,
+      delay: 2.5,
+      opacity: 0,
+      duration: 1,
+      stagger: 1,
+      // scrollTrigger: {
+      //   trigger: ".sec2ref",
+      //   start: "top 0%",
+
+      // },
+    });
+  }, []);
+
   return (
-    <div className="commonWidth flex lg:flex-row flex-col justify-center items-center  gap-8 rounded-2xl border-neutral-200">
+    <div className="commonWidth flex lg:flex-row flex-col justify-between items-center gap-8">
       {/* Left */}
-      <div className="lg:w-[40%] w-full h-[450px] rounded-2xl flex flex-col justify-center items-center bgCardImage gap-8 relative">
+      <div className="sec2ref lg:w-[40%] w-full h-[450px] rounded-2xl flex flex-col justify-center items-center bgCardImage gap-8 relative white-div-inner-shadow2">
         <div className="w-full h-full absolute bg-black/10 "></div>
         <Image
           className="relative z-50"
@@ -29,14 +51,11 @@ const Section2 = () => {
         </div>
 
         {/* Email Copy */}
-        <div className="flex justify-center items-center gap-4 bg-white/10 hover:bg-white/20 hover:text-neutral-300 px-6 py-4 rounded-lg relative z-50 transition-all duration-500 ease-in-out cursor-pointer">
-          <FaRegCopy className="size-[20px]" />
-          <p>yashvishnoi309@gmail.com</p>
-        </div>
+        <EmailCopy />
       </div>
 
       {/* Right */}
-      <div className="lg:w-[55.6%] w-full h-[450px] rounded-2xl border border-neutral-800 cardBgGradiant"></div>
+      <div className="sec2ref lg:w-[57%] w-full h-[450px] rounded-2xl border border-neutral-800 cardBgGradiant"></div>
     </div>
   );
 };

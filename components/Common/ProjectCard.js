@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const ProjectCard = ({ item, idx }) => {
@@ -8,8 +9,12 @@ const ProjectCard = ({ item, idx }) => {
     >
       {/* Heading and Subheading */}
       <div className="w-full flex flex-col gap-4 justify-center items-center">
-        <h4 className="md:text-[32px] text[24px] font-bold text-center">{item.name}</h4>
-        <p className="md:text-[16px] text-[12px] font-semibold text-center">{item.subheading}</p>
+        <h4 className="md:text-[32px] text[24px] font-bold text-center">
+          {item.name}
+        </h4>
+        <p className="md:text-[16px] text-[12px] font-semibold text-center">
+          {item.subheading}
+        </p>
       </div>
 
       {/* Techs used */}
@@ -18,9 +23,10 @@ const ProjectCard = ({ item, idx }) => {
           return (
             <div
               key={idx}
-              className="text-xs text-bold bg-black/50 hover:bg-black/20 px-2 py-2 select-none rounded-lg transition-all dura2ion-300 ease-in-out text-center"
+              className="text-xs text-bold flex justify-center items-center gap-2 bg-black/50 hover:bg-black/20 px-2 py-2 select-none rounded-lg transition-all dura2ion-300 ease-in-out text-center"
             >
-              {item}
+              <Image src={item.icon} width={15} height={15} alt="icon" />
+              {item.name}
             </div>
           );
         })}

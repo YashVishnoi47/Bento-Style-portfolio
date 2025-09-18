@@ -21,6 +21,10 @@ const Section4 = () => {
       icon: "./Home/SkillsIcons/express.svg",
     },
     {
+      name: "Javascript",
+      icon: "./Home/SkillsIcons/javascript.svg",
+    },
+    {
       name: "Tailwind CSS",
       icon: "./Home/SkillsIcons/tailwindcss.svg",
     },
@@ -37,8 +41,16 @@ const Section4 = () => {
       icon: "./Home/SkillsIcons/numpy.svg",
     },
     {
+      name: "FastAPI",
+      icon: "./Home/SkillsIcons/FastAPI.svg",
+    },
+    {
       name: "Vercel",
       icon: "./Home/SkillsIcons/vercel.svg",
+    },
+    {
+      name: "Render",
+      icon: "./Home/SkillsIcons/render.svg",
     },
     {
       name: "MongoDB",
@@ -65,8 +77,16 @@ const Section4 = () => {
       icon: "./Home/SkillsIcons/zustang.svg",
     },
     {
-      name: "Javascript",
-      icon: "./Home/SkillsIcons/javascript.svg",
+      name: "Clerk",
+      icon: "./Home/SkillsIcons/clerk.svg",
+    },
+    {
+      name: "GSAP",
+      icon: "./Home/SkillsIcons/gsap.svg",
+    },
+    {
+      name: "Frmaer Motion",
+      icon: "./Home/SkillsIcons/framerMotion.svg",
     },
   ];
 

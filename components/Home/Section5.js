@@ -55,7 +55,7 @@ const Section5 = () => {
       </div>
 
       {/* Right */}
-      <div className="lg:w-[40%] w-full min-h-[450px] rounded-2xl flex flex-col justify-center items-center gap-8 border border-neutral-600"></div>
+      <div className="lg:w-[40%] w-full min-h-[450px] rounded-2xl flex flex-col justify-center items-center gap-8 border border-neutral-800"></div>
     </div>
   );
 };

@@ -41,9 +41,9 @@ const CTAButton = ({ text }) => {
 
   return (
     <div
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      className="relative w-[180px] h-[50px] rounded-lg bg-white/20 flex justify-center items-center transition-all duration-300 ease-in-out cursor-pointer text-md select-none p-[px]"
+      // onMouseEnter={onMouseEnter}
+      // onMouseLeave={onMouseLeave}
+      className="relative w-[180px] h-[50px] rounded-lg bg-white/5 backdrop-blur-lg flex justify-center items-center transition-all duration-300 ease-in-out cursor-pointer text-md select-none hover:scale-110"
     >
       <div
         ref={textref}

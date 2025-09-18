@@ -8,9 +8,14 @@ const Section6 = () => {
       subheading:
         "This is subheading this will tell you more about my Templates.",
       link: "https://github.com/yashvishnoi309",
-      techs: ["Nextjs", "Reactjs", "TailwindCSS"],
+      techs: [
+        { name: "Next JS", icon: "./Home/SkillsIcons/next-js.svg" },
+        { name: "React JS", icon: "./Home/SkillsIcons/react.svg" },
+        { name: "TailwindCSS", icon: "./Home/SkillsIcons/tailwindcss.svg" },
+      ],
     },
   ];
+
   return (
     <div className="w-full min-h-[800px] flex gap-12 flex-col justify-center items-center rounded-2xl py-4 border border-neutral-800">
       {/* Heading */}

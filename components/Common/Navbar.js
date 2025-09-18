@@ -45,6 +45,17 @@ const Navbar = () => {
         duration: 0.5,
       });
     }
+
+    gsap.from(NavbarRef.current, {
+      y: -200,
+      delay: 0.5,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".nav",
+        start: "top 0%",
+      },
+    });
   }, [open]);
 
   return (
