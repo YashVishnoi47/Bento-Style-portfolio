@@ -165,6 +165,7 @@ const Section2 = () => {
               ...imageLogos,
               ...imageLogos,
               ...imageLogos,
+              ...imageLogos,
             ].map((item, idx) => {
               return (
                 <div
@@ -184,6 +185,7 @@ const Section2 = () => {
             className="w-full flex justify-end items-center gap-4"
           >
             {[
+              ...imageLogos2,
               ...imageLogos2,
               ...imageLogos2,
               ...imageLogos2,

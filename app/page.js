@@ -15,6 +15,7 @@ import Section6 from "@/components/Home/Section6";
 export default function Home() {
   return (
     <div className="w-full relative selection:bg-[#A78BFA] selection:text-white min-h-[100vh] gap-10 flex flex-col items-center bg-black text-white">
+     
       {/* <EntryAnimation /> */}
       <Navbar />
       <SmallNavbar />
@@ -34,3 +35,9 @@ export default function Home() {
     </div>
   );
 }
+
+<div className="min-h-screen w-full bg-[#020617] relative">
+  {/* Dark Sphere Grid Background */}
+
+  {/* Your Content/Components */}
+</div>;
