@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import CTAButton from "./CTA Button";
+import CTAButton from "./CTAButtons/CTA Button";
 import { Magnetic } from "../motion-primitives/magnetic";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
@@ -13,6 +13,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import CTAButton2 from "./CTAButtons/CTAButton2";
 
 const Footer = () => {
   return (
@@ -61,7 +62,7 @@ const Footer = () => {
           </div>
 
           <Magnetic intensity={0.6} range={400}>
-            <CTAButton text={"Work with me"} />
+            <CTAButton2 text={"Work with me"} />
           </Magnetic>
         </div>
         {/* Blur Box (info) */}

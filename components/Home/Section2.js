@@ -5,7 +5,7 @@ import { FaRegCopy } from "react-icons/fa6";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-import EmailCopy from "../Common/EmailCopy";
+import EmailCopy from "../Common/CTAButtons/EmailCopy";
 import { TextLoop } from "../motion-primitives/text-loop";
 
 const Section2 = () => {
@@ -170,7 +170,7 @@ const Section2 = () => {
               return (
                 <div
                   key={idx}
-                  className="logo-item flex justify-center items-center gap-2 px-4 py-2 rounded-md bg-black cursor-default select-none shrink-0"
+                  className="logo-item flex justify-center items-center gap-2 px-4 py-2 rounded-md bg-black select-none shrink-0"
                 >
                   <span className="text-xs">{item.name}</span>
                   <Image src={item.src} width={20} height={20} alt={item.alt} />
@@ -196,7 +196,7 @@ const Section2 = () => {
               return (
                 <div
                   key={idx}
-                  className="logo-item2 flex justify-center items-center gap-2 px-4 py-2 rounded-md bg-black cursor-default select-none shrink-0"
+                  className="logo-item2 flex justify-center items-center gap-2 px-4 py-2 rounded-md bg-black select-none shrink-0"
                 >
                   <span className="text-xs">{item.name}</span>
                   <Image src={item.src} width={20} height={20} alt={item.alt} />
@@ -207,10 +207,10 @@ const Section2 = () => {
         </div>
 
         {/* Last box */}
-        <div className="w-[80%] min-h-20 flex justify-center items-center rounded-2xl border border-neutral-800  relative bgCardImage white-div-inner-shadow2">
+        <div className="w-[80%] min-h-20 flex justify-center items-center rounded-2xl border border-neutral-800  relative bgCardImage white-div-inner-shadow2 ">
           <div className="w-full h-full absolute bg-[#6E6E6E]/10 backdrop-blur-xs z-0 " />
 
-          <span className="font-mono text-center text-sm relative z-1 cursor-default select-none">
+          <span className="font-mono text-center text-sm relative z-1 select-none">
             Websites that work smart, look sharp, and scale fast.
           </span>
         </div>

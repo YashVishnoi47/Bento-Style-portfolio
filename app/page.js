@@ -1,3 +1,4 @@
+import CursorFollower from "@/components/Common/CursorFollower";
 import EntryAnimation from "@/components/Common/EntryAnimation";
 import Footer from "@/components/Common/Footer";
 import GOTOTOPBUtton from "@/components/Common/GOTOTOPBUtton";
@@ -15,7 +16,7 @@ import Section6 from "@/components/Home/Section6";
 export default function Home() {
   return (
     <div className="w-full relative selection:bg-[#A78BFA] selection:text-white min-h-[100vh] gap-10 flex flex-col items-center bg-black text-white">
-     
+      <CursorFollower />
       {/* <EntryAnimation /> */}
       <Navbar />
       <SmallNavbar />

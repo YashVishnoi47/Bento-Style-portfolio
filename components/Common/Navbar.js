@@ -1,11 +1,13 @@
 "use client";
 import React, { useRef } from "react";
-import CTAButton from "./CTA Button";
+import CTAButton from "./CTAButtons/CTA Button";
 import MenuButton from "./MenuButton";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { useHomePageStore } from "@/stores/HomePageStore";
+import { motion } from "framer-motion";
+import CTAButton2 from "./CTAButtons/CTAButton2";
 
 const Navbar = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -46,22 +48,25 @@ const Navbar = () => {
       });
     }
 
-    gsap.from(NavbarRef.current, {
-      y: -200,
-      delay: 0.5,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".nav",
-        start: "top 0%",
-      },
-    });
+    // gsap.from(NavbarRef.current, {
+    //   y: -200,
+    //   delay: 0.5,
+    //   opacity: 0,
+    //   duration: 1,
+    //   scrollTrigger: {
+    //     trigger: ".nav",
+    //     start: "top 0%",
+    //   },
+    // });
   }, [open]);
 
   return (
-    <div
+    <motion.div
       ref={NavbarRef}
-      className="nav fixed z-95 h-[100px] mt-5 commonWidth px-[35px] flex justify-between items-center rounded-2xl bg-white/5 border-neutral-800 backdrop-blur-2xl"
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.1 }}
+      className="nav fixed z-95 h-[100px] mt-5 commonWidth px-[35px] flex justify-between items-center rounded-2xl bg-white/3 border-neutral-800 backdrop-blur-2xl"
     >
       <div className="navsection-1 w-full h-full flex justify-between items-center">
         {/* Left Section */}
@@ -80,7 +85,7 @@ const Navbar = () => {
         <div className="navAni-1 w-[33%] h-full hidden lg:flex justify-center items-center  border-red-500">
           <div
             ref={MObNavbarRef}
-            className="flex justify-center items-center px-6 py-2 bg--800 rounded-lg "
+            className="flex justify-center items-center px-6 py-2 bg--800 rounded-lg"
           >
             {["Home", "About", "Projects", "Services"].map((item, idx) => (
               <p
@@ -96,7 +101,7 @@ const Navbar = () => {
         {/* Right Section */}
         <div className="navAni-1 w-[33%] h-full hidden lg:flex gap-6 justify-end items-center border-red-500">
           {/* <MdOutlineDarkMode className="text-white text-2xl rounded-full cursor-pointer" /> */}
-          <CTAButton text={"Work with me"} />
+          <CTAButton2 text={"Let's Connect"} />
         </div>
 
         <MenuButton />
@@ -112,7 +117,7 @@ const Navbar = () => {
           </p>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

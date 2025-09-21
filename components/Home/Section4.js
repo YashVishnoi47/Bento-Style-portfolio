@@ -108,7 +108,7 @@ const Section4 = () => {
           return (
             <div
               key={idx}
-              className="px-4 py-2 bg-black flex justify-center items-center gap-2 rounded-lg"
+              className="px-4 py-2 bg-black flex justify-center items-center gap-2 rounded-lg hover-target"
             >
               <Image src={item.icon} width={20} height={20} alt="Logo" />
 
