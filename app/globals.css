@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -6,7 +6,6 @@
 
 *{
     scroll-behavior: smooth;
-    /* font-family:Source Code Pro; */
 }
 
 .commonWidth{
@@ -14,13 +13,17 @@
     max-width: 1340px;
 }
 
-.white-div-inner-shadow:hover {
+.BentoWidth{
+    width: 89.7%;
+    max-width: 1377px;
+}
+
+.white-div-inner-shadow {
  box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.06);
 }
 
-
-.white-div-inner-shadow2:hover {
- box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.06);
+.white-div-inner-shadow:hover {
+ box-shadow: inset 0 0 120px rgba(255, 255, 255, 0.1);
 }
 
 .subHeadingGradiant {
@@ -40,7 +43,7 @@
 }
 
 .headingGradiant{
-     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(167, 139, 250, 0.6) 100%);
+     background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(167, 139, 250, 0.6) 100%);
      background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -50,18 +53,22 @@
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 1) 0%,    
-    rgba(167, 139, 250, 0.7) 50%, 
-    rgba(139, 92, 246, 0.75) 100%    
+    rgba(245, 245, 245, 0.7) 50%, 
+    rgba(122, 122, 122, 0.75) 100%    
   );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-
 .cardBgGradiant{
     background: #000;
     background: linear-gradient(180deg,rgba(0, 0, 0, 0.06) 0%, rgba(255, 255, 255, 0.06) 100%);
+}
+
+.cardBgGradiantFromCorner{
+    background: #FFFF;
+    background: radial-gradient(circle,rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
 .cardBgRadialGradiant{
@@ -77,34 +84,104 @@
     background-attachment: scroll; 
 }
 
+.progresiveImage{
+    background-image: url('../public/Home/BgPolyDesgine.svg');
+    background-size: cover;    
+    background-position: center;   
+    background-repeat: no-repeat; 
+    background-attachment: scroll; 
 
+     -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0,1));
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
 
+    mask-image: linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0,1));
+    mask-repeat: no-repeat;
+    mask-size: cover;
 
+}
 
-/* Chrome, Edge, Safari */
+.progresivePoster{
+    background-image: url('../public/Home/BgPolyDesgine.svg');
+    background-size: cover;    
+    background-position: center;   
+    background-repeat: no-repeat; 
+    background-attachment: scroll; 
+
+     -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.02), rgba(0,0,0,0.5));
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+
+    mask-image: linear-gradient(to top, rgba(0,0,0,0.02), rgba(0,0,0,0.5));
+    mask-repeat: no-repeat;
+    mask-size: cover;
+
+}
+
+.bg{
+  --s: 200px; /* control the size*/
+  --c1: #1d1d1d;
+  --c2: #4e4f51;
+  --c3: #3c3c3c;
+
+  background:
+    repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 50%) 
+     calc(var(--s)/2) calc(var(--s)*tan(30deg)/2),
+    repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 50%);
+  background-size: var(--s) calc(var(--s)*tan(30deg));
+
+}
+
+.projectCardImage{
+    background-image: url('../public/Projects/snipppet.png');
+    background-size: cover;    
+    background-position: center;   
+    background-repeat: no-repeat; 
+    background-attachment: scroll; 
+}
+
+.project-cover:hover .projectCardImage{
+  scale: 1.05;
+}
+
+.BentoGridTextGradiant{
+    color: transparent;
+    background: linear-gradient(0deg,rgba(221, 136, 222, 1) 30%, rgba(255, 255, 255, 1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.BentoGridTextGradiant2{
+    color: transparent;
+    background: linear-gradient(0deg,#7893C6 45%, rgba(255, 255, 255, 1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.BentoGridBgGradiant{
+    background: #C1ACFF;
+    background: radial-gradient(circle at 50% 90%, rgba(193, 172, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Hide scrollbar for webkit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  width: 6px;               /* slim scrollbar */
+  display: none;
 }
 
-::-webkit-scrollbar-track {
-  background: #000;         /* black track */
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none;
 }
 
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1); 
-  border-radius: 0px;                 /* fully rounded */
+/* Alternative: Hide scrollbar but keep scroll functionality */
+body {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.6); /* brighter on hover */
+body::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
 }
-
-/* Firefox */
-* {
-  scrollbar-width: thin;                       /* slim */
-  scrollbar-color: rgba(255,255,255,0.4) #000; /* thumb color + track color */
-}
-
 
 @theme inline {
     --radius-sm: calc(var(--radius) - 4px);
@@ -142,6 +219,11 @@
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
+    --color-d-sheet: var(--d-sheet);
+    --color-d-border: var(--d-border);
+    --color-d-fg: var(--d-fg);
+    --color-d-muted: var(--d-muted);
+    --color-d-bg: var(--d-bg);
 }
 
 :root {
@@ -174,9 +256,14 @@
     --sidebar-primary: oklch(0.205 0 0);
     --sidebar-primary-foreground: oklch(0.985 0 0);
     --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-accent-foreground: #171717;
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
+    --d-bg: hsl(0 0% 100%);
+    --d-muted: hsl(0 0% 90%);
+    --d-fg: hsl(0 0% 0%);
+    --d-border: hsl(0 0% 90%);
+    --d-sheet: hsl(0 0% 98%);
 }
 
 .dark {
@@ -188,7 +275,7 @@
     --popover-foreground: oklch(0.985 0 0);
     --primary: oklch(0.922 0 0);
     --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
+    --secondary: hsl(0, 0%, 15%);
     --secondary-foreground: oklch(0.985 0 0);
     --muted: oklch(0.269 0 0);
     --muted-foreground: oklch(0.708 0 0);
@@ -211,6 +298,11 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.556 0 0);
+    --d-bg: hsl(0 0% 10%);
+    --d-muted: hsl(0 0% 20%);
+    --d-fg: hsl(0 0% 100%);
+    --d-border: hsl(0 0% 20%);
+    --d-sheet: hsl(0 0% 12%);
 }
 
 @layer base {

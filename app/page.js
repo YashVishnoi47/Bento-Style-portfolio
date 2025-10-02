@@ -1,44 +1,75 @@
-import CursorFollower from "@/components/Common/CursorFollower";
-import EntryAnimation from "@/components/Common/EntryAnimation";
-import Footer from "@/components/Common/Footer";
-import GOTOTOPBUtton from "@/components/Common/GOTOTOPBUtton";
-import Navbar from "@/components/Common/Navbar";
-import SmallNavbar from "@/components/Common/SmallNavbar";
-import CoolStuff from "@/components/Home/CoolStuff";
-import InfoBoxes from "@/components/Home/InfoBoxes";
-import Section1 from "@/components/Home/Section1";
-import Section2 from "@/components/Home/Section2";
-import Section3 from "@/components/Home/Section3";
-import Section4 from "@/components/Home/Section4";
-import Section5 from "@/components/Home/Section5";
-import Section6 from "@/components/Home/Section6";
+import CursorFollower from "@/components/ui/CursorFollower";
+import Footer from "@/components/layout/Footer";
+import Section1 from "@/components/sections/Home/Section1";
+import ScrollVelocity from "@/components/ScrollVelocity";
+import { useHomePageStore } from "@/stores/HomePageStore";
+import BentoGrid from "@/components/sections/Home/BentoGrid";
+import Section3 from "@/components/sections/Home/Section3";
+import Section4 from "@/components/sections/Home/Section4";
+import Section5 from "@/components/sections/Home/Section5";
+
 
 export default function Home() {
   return (
-    <div className="w-full relative selection:bg-[#A78BFA] selection:text-white min-h-[100vh] gap-10 flex flex-col items-center bg-black text-white">
+    <div
+      className={`w-full relative selection:bg-[#ffff] selection:text-black min-h-[100vh] gap-10 flex flex-col items-center bg-black text-white overflow-x-hidden`}
+    >
       <CursorFollower />
-      {/* <EntryAnimation /> */}
-      <Navbar />
-      <SmallNavbar />
-      <Section1 />
-      <Section3 />
-      <Section4 />
-      <Section5 />
-      <Section2 />
-      <GOTOTOPBUtton />
 
-      {/* Section 6 and cool stuff */}
-      <div className="flex flex-col gap-32 commonWidth">
-        <Section6 />
+      {/* Home */}
+      <div className="w-full relative flex justify-center items-center z-3">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundColor: "#0a0a0a",
+            backgroundImage: `
+       radial-gradient(circle at 25% 25%, #222222 0.5px, transparent 1px),
+       radial-gradient(circle at 75% 75%, #111111 0.5px, transparent 1px)
+     `,
+            backgroundSize: "10px 10px",
+            imageRendering: "pixelated",
+          }}
+        />
+
+        <Section1 />
       </div>
-      <InfoBoxes />
+
+      <BentoGrid />
+
+      {/* Projects */}
+      <Section3 />
+
+      {/* Skills */}
+      <div className="w-full relative flex justify-center items-center">
+        <Section4 />
+      </div>
+
+      {/* Velocity text */}
+      <div className="w-full min-h-[70vh]  flex justify-center items-center">
+        <ScrollVelocity
+          texts={[
+            "Responsive ✦ Optimized ✦ Scalable ✦ Modern ✦",
+            "Responsive ✦ Optimized ✦ Scalable ✦ Modern ✦",
+          ]}
+          velocity={100}
+          stiffness={400}
+          className="custom-scroll-text text-[#E0E0E0] select-none"
+        />
+      </div>
+
+      {/* About */}
+      <div className="w-full relative flex justify-center items-center">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            background:
+              "radial-gradient(150% 150% at 50% 0%, #000000 40%, rgba(215,132,216,0.1) 100%)",
+          }}
+        />
+        <Section5 />
+      </div>
+
       <Footer />
     </div>
   );
 }
-
-<div className="min-h-screen w-full bg-[#020617] relative">
-  {/* Dark Sphere Grid Background */}
-
-  {/* Your Content/Components */}
-</div>;
