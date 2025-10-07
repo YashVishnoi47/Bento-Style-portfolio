@@ -8,7 +8,6 @@ const Tools = () => {
     <div
       className={`w-full relative selection:bg-[#ffff] selection:text-black min-h-[100vh] gap-10 flex flex-col items-center bg-black text-white overflow-x-hidden`}
     >
-      <CursorFollower />
 
       {/* Text and upperpart */}
       <div className="w-full h-[70vh] relative flex justify-centre items-center">

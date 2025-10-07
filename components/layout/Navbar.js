@@ -1,11 +1,11 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import MenuButton from "../ui/MenuButton";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { useHomePageStore } from "@/stores/HomePageStore";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -17,6 +17,7 @@ const Navbar = () => {
   const { open } = useHomePageStore();
   const NavbarRef = useRef(null);
   const MObNavbarRef = useRef(null);
+  const [hover, setHover] = useState(null);
 
   // useGSAP(() => {
   //   const tl = gsap.timeline();
@@ -96,13 +97,21 @@ const Navbar = () => {
                 { name: "Projects", link: "/projects" },
                 { name: "More", link: "" },
               ].map((item, idx) => (
-                <div
+                <motion.div
                   onClick={() => router.push(`${item.link}`)}
-                  className="font-medium cursor-pointer px-4 py-2.5 flex text-neutral-100 justify-center items-center transition-all duration-300 ease-in-out rounded-md hover:bg-white/10 border-white select-none shrink-0"
+                  onMouseEnter={() => setHover(idx)}
+                  onMouseLeave={() => setHover(null)}
+                  className="font-medium relative cursor-pointer px-4 py-2.5 flex text-neutral-100 justify-center items-center transition-all duration-300 ease-in-out rounded-md hover:bg-whit10 border-white select-none shrink-0"
                   key={idx}
                 >
                   {item.name}
-                </div>
+                  {idx === hover && (
+                    <motion.div
+                      layoutId={"hover"}
+                      className="absolute bottom-0 left-0 w-full h-full rounded-md bg-white/10"
+                    />
+                  )}
+                </motion.div>
               ))}
             </div>
           </div>
