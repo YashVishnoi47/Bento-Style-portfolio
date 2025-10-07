@@ -87,27 +87,37 @@ const Projects = () => {
   ];
   return (
     <div className="w-full relative selection:bg-[#ffff] selection:text-black min-h-[100vh] gap-10 flex flex-col items-center bg-black text-white overflow-x-hidden">
-      <CursorFollower />
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundColor: "#0a0a0a",
+          backgroundImage: `
+       radial-gradient(circle at 25% 25%, #222222 0.5px, transparent 1px),
+       radial-gradient(circle at 75% 75%, #111111 0.5px, transparent 1px)
+     `,
+          backgroundSize: "10px 10px",
+          imageRendering: "pixelated",
+        }}
+      />
 
       <div className="w-full relative flex flex-col justify-center items-center">
         <div className="w-full h-full absolute progresiveImage"></div>
         <ProjectSection1 />
       </div>
 
-      
       {/* Projects */}
       <div className="commonwidth flex py-20 relative flex-wrap justify-center items-center gap-18">
         {/* Projects */}
         {Projects.map((item, idx) => (
           <Tilt
-            className="min-h-[350px] project-target lg:w-[40%] w-full"
+            className="min-h-[350px] project-target lg:w-[35%] w-full"
             key={idx}
             rotationFactor={4}
             isRevese
           >
             <div
               key={idx}
-              className="w-full flex flex-col gap-8 justify-center items-center relative rounded-2xl hover:shdow-md border border-black hover:border-[#2B2B2B] cursor-pointer hover:shadow-xl shadow-white/20 transition-all duration-300 ease-in-out"
+              className="w-full flex flex-col gap-8 justify-center backdrop-blur-2xl items-center relative rounded-2xl hover:shdow-md border border-black hover:border-[#2B2B2B] cursor-pointer hover:shadow-xl shadow-white/20 transition-all duration-300 ease-in-out"
             >
               {/* Image */}
               <div className="w-[100%] h-[350px] p-4">
@@ -118,7 +128,7 @@ const Projects = () => {
                     height={600}
                     alt="icon"
                   /> */}
-                <div className="w-full h-full bg-white/20 rounded-2xl"></div>
+                <div className="w-full h-full bg-white/20 backdrop-blur-2xl rounded-2xl"></div>
               </div>
 
               {/* Heading and  subheading */}

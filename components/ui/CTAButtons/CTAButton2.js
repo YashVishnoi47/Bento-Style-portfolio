@@ -8,7 +8,7 @@ const CTAButton2 = ({ text, link }) => {
 
   return (
     <StyledWrapper>
-      <button onClick={() => router.push(link || "#")} className="button">
+      <div onClick={() => router.push(link || "#")} className="button relative z-99">
         {text}
         <svg className="icon" viewBox="0 0 24 24" fill="currentColor">
           <path
@@ -17,7 +17,7 @@ const CTAButton2 = ({ text, link }) => {
             clipRule="evenodd"
           />
         </svg>
-      </button>
+      </div>
     </StyledWrapper>
   );
 };

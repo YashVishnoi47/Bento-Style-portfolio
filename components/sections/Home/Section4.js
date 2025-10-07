@@ -90,6 +90,10 @@ const Section4 = () => {
       name: "GSAP",
       icon: "./Home/SkillsIcons/gsap.svg",
     },
+    {
+      name: "Linux",
+      icon: "./Home/SkillsIcons/linux.svg",
+    },
   ];
 
   return (
@@ -113,7 +117,7 @@ const Section4 = () => {
           return (
             <div
               key={idx}
-              className="w-[100px] h-[100px]  relative z-99 shrink-0 bg-white/5 border border-white/15 flex flex-col justify-center items-center gap-4 rounded-lg hover:shadow-md  shadow-white/50 transition-all duration-200 ease-in-out cursor-default"
+              className="w-[100px] h-[100px]  relative z-99 shrink-0 bg-white/5 backdrop-blur-xl border border-white/15 flex flex-col justify-center items-center gap-4 rounded-lg hover:shadow-md  shadow-white/50 transition-all duration-200 ease-in-out cursor-default"
             >
               <Image src={item.icon} width={30} height={30} alt="Logo" />
 

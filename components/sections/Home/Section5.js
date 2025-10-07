@@ -18,7 +18,7 @@ const Section5 = () => {
   return (
     <div
       id="about"
-      className="commonWidth relative mt-30 py-20 flex lg:flex-row flex-col justify-between items-center gap-8"
+      className="commonWidth relative py-20 flex lg:flex-row flex-col justify-between items-center gap-8"
     >
       {/* Left */}
       <div className="lg:w-[57%] w-full min-h-[450px] rounded-2xl p-8 flex flex-col gap-6">
@@ -142,8 +142,8 @@ const Section5 = () => {
             href={"https://github.com/YashVishnoi47"}
           >
             <Image
-              src={"/Common/final logo2.svg"}
-              className="bg-[#ffff]/10 shadow-lg rounded-2xl"
+              src={"/Common/My logo black.svg"}
+              className="shadow-lg rounded-2xl"
               width={400}
               height={400}
               alt="yash"

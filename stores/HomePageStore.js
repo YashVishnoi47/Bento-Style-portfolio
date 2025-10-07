@@ -6,4 +6,8 @@ export const useHomePageStore = create((set) => ({
 
   openDialog: false,
   setOpenDialog: () => set((openDialog) => ({ openDialog: !openDialog.openDialog })),
+
+
+  pageLink: "Home",
+  setPageLink: () => set((pageLink) => ({ pageLink: pageLink.pageLink })),
 }));

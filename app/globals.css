@@ -18,6 +18,23 @@
     max-width: 1377px;
 }
 
+/* Gradient text style */
+.Heading-gradient-text {
+  /* Set background gradient from top (#DD88DE) to bottom (#ffffff) */
+  background: linear-gradient(to bottom, #DD88DE, #ffffff);
+
+  /* Clip the background to the text only */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Make text transparent so the gradient shows through */
+  -webkit-text-fill-color: transparent;
+  
+  /* Optional: smooth rendering for crisp gradient edges */
+  -webkit-text-stroke: 0;
+}
+
+
 .white-div-inner-shadow {
  box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.06);
 }
@@ -117,6 +134,39 @@
     mask-size: cover;
 
 }
+
+
+
+
+.FigmaGradiant {
+  /* width & height to make it visible */
+  width: 160px;
+  height: 160px;
+
+  /* makes it circular */
+  border-radius: 50%;
+
+  /* radial gradient background */
+  background: radial-gradient(circle at center, #E64A19 0%, #E64A19 50%, #66BB6A 100%);
+
+  /* optional: center logo inside */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.BentoInnerShadow {
+ box-shadow: inset 0 0 100px rgba(120,147,198,0.15);
+ transition: all 0.3s ease-in-out;
+}
+
+.BentoInnerShadow:hover {
+ box-shadow: inset 0 0 100px rgba(120,147,198,0.25);
+}
+
+
 
 .bg{
   --s: 200px; /* control the size*/

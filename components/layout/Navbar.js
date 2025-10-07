@@ -1,16 +1,15 @@
 "use client";
 import React, { useRef } from "react";
-import CTAButton from "../ui/CTAButtons/CTA Button";
 import MenuButton from "../ui/MenuButton";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { useHomePageStore } from "@/stores/HomePageStore";
 import { motion } from "framer-motion";
-import CTAButton2 from "../ui/CTAButtons/CTAButton2";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
 
 const Navbar = () => {
   const router = useRouter();
@@ -65,26 +64,24 @@ const Navbar = () => {
   // }, [open]);
 
   return (
-    <div className="w-full absolute  h-full flex justify-center items-start">
+    <nav className="w-full absolute h-full flex justify-center items-start">
       <motion.div
         ref={NavbarRef}
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.1 }}
-        className="nav relative z-99  h-[100px] mt-5 commonWidth px-[35px] flex justify-between items-center rounded-2xl bg-white/2 backdrop-blur-xl"
+        className="nav fixed z-999  h-[70px] mt-5 w-[900px] px-[12px] flex justify-between items-center rounded-lg bg-white/5 backdrop-blur-xl"
       >
-
-        
         <div className="navsection-1 w-full h-full flex justify-between items-center">
           {/* Left Section */}
-          <div className="navAni-1 lg:w-[33%] w-[50%] h-full gap-4 flex justify-start items-center  border-red-500">
-            {/* Image */}
-            <div className="w-16 h-16 rounded-full bg-neutral-400 shrink-0 cursor-pointer"></div>
-
-            {/* Name */}
-            <h1 className="lg:text-2xl relative z-99 md:text-xl text-white text-md text-sm  font-black  cursor-pointer">
-              Yash Vishnoi
-            </h1>
+          <div className="navAni-1 lg:w-[28%] w-[50%] h-full gap-4 flex justify-start items-center  border-red-500">
+            {/* Logo */}
+            <Image
+              src="/common/My logo black.svg"
+              width={40}
+              height={40}
+              alt="logo"
+            />
           </div>
 
           {/* Middle Section */}
@@ -97,7 +94,7 @@ const Navbar = () => {
                 { name: "Home", link: "/" },
                 { name: "About", link: "/about" },
                 { name: "Projects", link: "/projects" },
-                { name: "Services", link: "/services" },
+                { name: "More", link: "" },
               ].map((item, idx) => (
                 <div
                   onClick={() => router.push(`${item.link}`)}
@@ -112,25 +109,30 @@ const Navbar = () => {
 
           {/* Right Section */}
           <div className="navAni-1 w-[33%] h-full hidden lg:flex gap-6 justify-end items-center border-red-500">
-            {/* <MdOutlineDarkMode className="text-white text-2xl rounded-full cursor-pointer" /> */}
-            <CTAButton2 text={"Let's Connect"} />
+            <div className="w-20 h-10 rounded-lg flex justify-center items-center bg-white/20 shrink-0 cursor-pointer transition-all duration-300 ease-in-out hover:scale-95 group">
+              <MdOutlineKeyboardDoubleArrowDown
+                size={30}
+                className="text-white group-hover:rotate-360 transition-all duration-700 ease-in-out"
+              />
+            </div>
           </div>
 
           <MenuButton />
         </div>
 
-        <div className="navsection-2 w-full h-full hidden flex-col justify-center items-center gap-4">
+        <div className="navsection-2 text-white w-full h-full hidden flex-col justify-center items-center gap-4">
           {["Home", "About", "Projects", "Services"].map((item, idx) => (
-            <p
+            <Link
+              href={`/${item.toLowerCase()}`}
               className="mobnavlinks font-medium cursor-pointer w-full py-2 px-4 flex justify-start items-center transition-all duration-300 ease-in-out rounded-lg hover:bg-neutral-800 border-white select-none"
               key={idx}
             >
               {item}
-            </p>
+            </Link>
           ))}
         </div>
       </motion.div>
-    </div>
+    </nav>
   );
 };
 

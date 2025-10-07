@@ -5,15 +5,18 @@ import gsap from "gsap";
 import { TextShimmer } from "@/components/motion-primitives/text-shimmer";
 import { Tilt } from "@/components/motion-primitives/tilt";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+import CTAButton2 from "@/components/ui/CTAButtons/CTAButton2";
 
 const Section3 = () => {
   gsap.registerPlugin(ScrollTrigger);
   const containerRef = useRef(null);
   const projectsRef = useRef(null);
+  
   const Projects = [
     {
       tag: "🚀 Project 1",
-      image: "/Projects/Snipppet.png",
+      image: "/Common/macbook 1.svg",
       name: "Snipppet",
       side: "right",
       subheading:
@@ -156,10 +159,10 @@ const Section3 = () => {
   }, []);
 
   return (
-    <div
+    <section
       id="projects"
       ref={containerRef}
-      className="project-target w-full max-w-[1540px] px-2 relative mt-20 py-10 flex flex-col justify-center items-center gap-24 overflow-hidden"
+      className="w-full max-w-[1540px] px-2 relative mt-20 py-10 flex flex-col justify-center items-center gap-24 overflow-hidden"
     >
       {/* Main Heading */}
       <motion.div className="w-full flex gap-x-11 flex-col justify-center items-center">
@@ -185,18 +188,19 @@ const Section3 = () => {
           >
             <motion.div
               key={idx}
-              className="w-full flex flex-col gap-8 justify-center items-center relative rounded-2xl hover:shdow-md border border-[#2B2B2B] hover:border-[#2B2B2B] cursor-pointer hover:shadow-xl shadow-white/20 transition-all duration-300 ease-in-out"
+              className="w-full flex flex-col gap-8 justify-center items-center relative rounded-2xl hover:shdow-md border border-[#2B2B2B] hover:border-[#2B2B2B] backdrop-blur-2xl cursor-pointer hover:shadow-xl shadow-white/20 transition-all duration-300 ease-in-out"
             >
               {/* Image */}
-              <div className="w-[100%] h-[350px] p-4">
-                {/* <Image
-              className="rounded-2xl shadow-[0_8px_20px_rgba(254,254,254,_0.2)]"
-              src={item.image}
-              width={600}
-              height={600}
-              alt="icon"
-            /> */}
-                <div className="w-full h-full bg-white/20 rounded-2xl"></div>
+              <div className="w-[100%] h-[350px] p-4 flex justify-center items-center">
+                <div className="w-full h-full bg-white/10  rounded-2xl flex justify-center items-center">
+                  {/* <Image
+                    className="rounded-2xl"
+                    src={item.image}
+                    width={400}
+                    height={400}
+                    alt="icon"
+                  /> */}
+                </div>
               </div>
 
               {/* Heading and  subheading */}
@@ -221,8 +225,42 @@ const Section3 = () => {
             </motion.div>
           </Tilt>
         ))}
+
+        {/* Cta */}
+        <Tilt
+          className="min-h-[350px] lg:w-[30%] shrink-0 w-full"
+          rotationFactor={4}
+          isRevese
+        >
+          <motion.div className="w-full py-20 flex flex-col gap-6 justify-center z-99 items-center relative rounded-2xl border border-[#2B2B2B] hover:border-white/30 cursor-pointer hover:shadow-2xl shadow-white/10 transition-all duration-500 ease-out overflow-hidden group">
+            {/* Gradient Overlay Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20 opacity-0 group-hover:opacity-100 z-0 transition-opacity duration-500" />
+
+            {/* Content Container */}
+            <div className="w-full h-[350px] p-8 flex flex-col justify-center items-center gap-6 relative z-10">
+              {/* Heading */}
+              <h4 className="text-4xl md:text-5xl text-center text-white font-bold leading-tight">
+                Explore More Amazing
+                <span className="block bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mt-2">
+                  Projects
+                </span>
+              </h4>
+
+              {/* Description */}
+              <p className="text-gray-400 text-center max-w-md text-lg">
+                Discover a collection of innovative solutions and creative works
+              </p>
+
+              {/* CTA Button */}
+              <CTAButton2 text="View More" link="/projects" />
+            </div>
+
+            {/* Decorative Corner Element */}
+            <div className="absolute top-4 right-4 w-20 h-20 border-t-2 border-r-2 border-white/10 rounded-tr-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          </motion.div>
+        </Tilt>
       </div>
-    </div>
+    </section>
   );
 };
 
