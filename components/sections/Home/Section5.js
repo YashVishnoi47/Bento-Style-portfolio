@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/tooltip";
 import Image from "next/image";
 import CTAButton2 from "@/components/ui/CTAButtons/CTAButton2";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { Tilt } from "@/components/motion-primitives/tilt";
 
 const Section5 = () => {

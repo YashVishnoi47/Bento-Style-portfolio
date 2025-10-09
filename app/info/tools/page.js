@@ -6,10 +6,8 @@ import React from "react";
 const Tools = () => {
   return (
     <div
-      className={`w-full relative selection:bg-[#ffff] selection:text-black min-h-[100vh] gap-10 flex flex-col items-center bg-black text-white overflow-x-hidden`}
+      className={`w-full relative selection:bg-[#ffff] selection:text-black min-h-[100vh] gap-10 flex flex-col items-center bg-black text-white overflow-x-hidden `}
     >
-
-      {/* Text and upperpart */}
       <div className="w-full h-[70vh] relative flex justify-centre items-center">
         <div className="w-full h-full absolute progresiveImage"></div>
         <div className="w-full flex flex-col gap-2 justify-center items-center relative z-1 ">
@@ -22,34 +20,68 @@ const Tools = () => {
         </div>
       </div>
 
-      <h1 className="lg:text-[40px] md:text:[35px] text-[20px] text-[#ffff] text-center font-semibold">
-        Tools 
-      </h1>
-      <div className="w-[70%] mb-100 flex gap-4 flex-wrap justify-center items-start relative">
+      <div className="w-full flex flex-col gap-20 justify-center items-center py-10">
         {[
-          "/infoBoxes/tools/vs code.svg",
-          "/infoBoxes/tools/pycharm.svg",
-          "/infoBoxes/tools/notion.svg",
-          "/infoBoxes/tools/postman.svg",
-          "/infoBoxes/tools/spotify.svg",
-          "/infoBoxes/tools/react scan.svg",
-          "/infoBoxes/tools/chatgpt.svg",
-          "/infoBoxes/tools/claude.svg",
-          "/infoBoxes/tools/googleCalender.svg",
-          "/Home/SkillsIcons/figma.svg",
-          "/Home/SkillsIcons/github.svg",
-          "/Home/SkillsIcons/shadCn.svg",
-          "/Home/SkillsIcons/vercel.svg",
-          "/Home/SkillsIcons/render.svg",
-          //   "",
+          {
+            heading: "AI Tools",
+            icons: [
+              { image: "/infoBoxes/tools/chatgpt.svg", name: "ChatGPT" },
+              { image: "/infoBoxes/tools/github-copilot.svg", name: "Copilot" },
+              { image: "/infoBoxes/tools/gemini.svg", name: "Gemini" },
+              { image: "/infoBoxes/tools/perplxity.svg", name: "Perplxity" },
+              { image: "/infoBoxes/tools/deepseek.svg", name: "Deepseek" },
+            ],
+          },
+          {
+            heading: "UI Libraries",
+            icons: [
+              { image: "/Home/SkillsIcons/shadcn.svg", name: "Shadcn" },
+              { image: "/infoBoxes/tools/21st.svg", name: "21st" },
+              { image: "/infoBoxes/tools/aceternity.png", name: "Aceternity UI" },
+              { image: "/infoBoxes/tools/reactbits.svg", name: "React Bits" },
+
+              ,
+            ],
+          },
+          {
+            heading: "Softwares",
+            icons: [
+              { image: "/infoBoxes/tools/vs code.svg", name: "VS Code" },
+              { image: "/infoBoxes/tools/vim.svg", name: "VIM" },
+              { image: "/infoBoxes/tools/postman.svg", name: "Postman" },
+              { image: "/infoBoxes/tools/notion.svg", name: "Notion" },
+              { image: "/Home/SkillsIcons/mongo.svg", name: "Compass" },
+              { image: "/Home/SkillsIcons/figma.svg", name: "Figma" },
+            ],
+          },
         ].map((item, idx) => {
           return (
             <div
               key={idx}
-              className="w-[100px] h-[100px] flex flex-col border-2 border-neutral-800 items-center justify-center gap-4 rounded-xl bg-white/10 hover:-translate-y-3 hover:shadow-md shadow-white/50 transition-all duration-300 ease-in-out "
+              className="commonWidth flex flex-col gap-10 justify-center items-center"
             >
-              <div className="w-[90%] h-[90%] bg-black rounded-xl flex justify-center items-center">
-                <Image src={item} width={40} height={40} alt="icon" />
+              <h1 className="lg:text-[40px] md:text:[35px] text-[20px] text-[#ffff] text-center font-semibold">
+                {item.heading}
+              </h1>
+              <div className="w-[80%] flex gap-4 flex-wrap justify-center items-start relative">
+                {item.icons.map((icon, idx) => {
+                  return (
+                    <div
+                      key={idx}
+                      className="w-[110px] h-[110px]  relative z-99 shrink-0 bg-white/5 backdrop-blur-xl border border-white/15 flex flex-col justify-center items-center gap-4 rounded-lg hover:shadow-md  shadow-white/50 hover:-translate-y-2 transition-all duration-200 ease-in-out cursor-default"
+                    >
+                      <Image
+                        src={icon.image}
+                        width={40}
+                        height={40}
+                        alt="icon"
+                      />
+                      <span className="text-sm text-white text-center leading-none">
+                        {icon.name}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           );

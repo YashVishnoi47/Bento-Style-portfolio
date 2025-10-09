@@ -10,6 +10,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import ContactDrawer from "@/components/layout/ContactDrawer";
 
 const Section1demo = () => {
   return (
@@ -63,8 +64,9 @@ const Section1demo = () => {
 
       {/* CTA */}
       <div className="flex lg:flex-row flex-col justify-center items-center gap-4">
-        <CTAButton2 text="Lets's Connect" />
-        <EmailCopy />
+        {/* <CTAButton2 text="Lets's Connect" /> */}
+        <ContactDrawer use={"nav"} />
+        <EmailCopy  />
       </div>
     </motion.section>
   );

@@ -1,4 +1,3 @@
-import CursorFollower from "@/components/ui/CursorFollower";
 import Footer from "@/components/layout/Footer";
 import Section1 from "@/components/sections/Home/Section1";
 import ScrollVelocity from "@/components/ScrollVelocity";

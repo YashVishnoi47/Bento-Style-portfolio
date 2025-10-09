@@ -18,6 +18,7 @@ import { Tilt } from "../motion-primitives/tilt";
 import InfoBoxes from "../sections/Home/InfoBoxes";
 import { FooterLink } from "../ui/CTAButtons/FooterLink";
 import { LampContainer } from "../ui/lamp";
+import ContactDrawer from "./ContactDrawer";
 
 const Footer = () => {
   return (
@@ -70,9 +71,7 @@ const Footer = () => {
             </motion.h1>
           </div>
 
-          <Magnetic intensity={1} range={400}>
-            <CTAButton2 text={"Chat With Yash"} />
-          </Magnetic>
+            <ContactDrawer use={"foot"}/>
         </div>
 
         {/* Blur Box (info) */}

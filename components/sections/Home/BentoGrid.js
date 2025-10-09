@@ -37,6 +37,7 @@ const SmallSite = () => {
 };
 import LogoLoop from "@/components/LogoLoop";
 import CTAButton2 from "@/components/ui/CTAButtons/CTAButton2";
+import ContactDrawer from "@/components/layout/ContactDrawer";
 
 const MobileSite = () => {
   return (
@@ -472,7 +473,7 @@ const BentoGrid = () => {
           cl="text-white relative z-99 w-[85%]"
         />
 
-        <CTAButton2 text={"Get Started"} />
+      <ContactDrawer use="bent" />
       </div>
     </section>
   );
