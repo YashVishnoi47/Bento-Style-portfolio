@@ -71,7 +71,7 @@ const Footer = () => {
             </motion.h1>
           </div>
 
-            <ContactDrawer use={"foot"}/>
+          <ContactDrawer use={"foot"} />
         </div>
 
         {/* Blur Box (info) */}
@@ -99,7 +99,7 @@ const Footer = () => {
               {/* Text */}
               <div className="flex justify-center items-start flex-col gap-2 ml-4">
                 <p className="text-sm w-[70%] text-left text-[#eeeeee]">
-                  I'm Yash Vishnoi - a full Stack Web Developer and UI/UX
+                  I&apos;m Yash Vishnoi - a full Stack Web Developer and UI/UX
                   designer. Thanks for checking out my site!
                 </p>
               </div>
