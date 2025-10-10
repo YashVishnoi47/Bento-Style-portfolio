@@ -102,6 +102,10 @@ const Footer = () => {
                   I&apos;m Yash Vishnoi - a full Stack Web Developer and UI/UX
                   designer. Thanks for checking out my site!
                 </p>
+
+                <p className="text-sm w-[70%] mt-2 text-left text-[#b6b6b6]">
+                  Open for Remote internships and freelance projects.
+                </p>
               </div>
             </div>
 
@@ -135,8 +139,7 @@ const Footer = () => {
           {/* Bottom */}
           <div className="w-full h-[20%] flex justify-start items-center relative z-90 bg-black/50 px-4">
             <p className="text-sm text-left flex gap-2 justify-start items-center w-1/2 text-[#b6b6b6]">
-              {/* &copy; 2025 Yash Vishnoi. All rights reserved. */}# Open for
-              Remote internships and freelance projects.
+              &copy; 2025 Yash Vishnoi. All rights reserved.
             </p>
 
             <div className="text-sm text-left w-1/2 text-[#b6b6b6] flex justify-end items-center gap-2">

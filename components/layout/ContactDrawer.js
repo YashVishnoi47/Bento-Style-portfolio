@@ -9,10 +9,13 @@ import { Textarea } from "../ui/textarea";
 import Link from "next/link";
 import { icons, Send } from "lucide-react";
 import Image from "next/image";
+import EmailCopy from "../ui/CTAButtons/EmailCopy";
+import { MdEmail } from "react-icons/md";
 
 const ContactDrawer = ({ use }) => {
   const [state, handleSubmit, reset] = useForm("meorlwpk");
   const [hover, sethover] = useState(0);
+  const [hoverUserName, setHoverUserName] = useState(null);
 
   return (
     <div className="">
@@ -23,7 +26,7 @@ const ContactDrawer = ({ use }) => {
           {use === "foot" && <CTAButton2 text="Chat with Yash" />}
         </Drawer.Trigger>
         <Drawer.Portal>
-          <Drawer.Overlay className="fixed inset-0 bg-black/40" />
+          <Drawer.Overlay className="fixed inset-0 bg-black/70" />
           <Drawer.Content className="rounded-2xl w-[40%] mb-2 h-fit fixed bottom-0 left-1/2 -translate-x-1/2 outline-none">
             <Drawer.Title />
 
@@ -40,13 +43,17 @@ const ContactDrawer = ({ use }) => {
                   imageRendering: "pixelated",
                 }}
               />
-
-              <div className="w-full flex justify-center items-center absolute top-4">
+              {/* <div className="w-full flex justify-center items-center absolute top-4">
                 <div className="w-[30%] h-[3px] rounded-full bg-white/50" />
+              </div> */}
+
+              {/* Badge */}
+              <div className="relative z-19 px-2 bg-white/10 backdrop-blur-2xl py-1 mt-2 rounded-sm">
+                <p className="text-white text-sm">Feel free to reach me out</p>
               </div>
 
               {/* Toggle */}
-              <div className="mt-8 w-[90%] h-12 border border-neutral-900 rounded-md bg-black/90 flex  justify-center items-center relative text-white">
+              <div className="mt-4 w-[90%] h-12 border border-neutral-900 rounded-md bg-black/90 flex  justify-center items-center relative text-white">
                 {["Fill a form", "Socials"].map((item, idx) => {
                   return (
                     <div
@@ -75,7 +82,7 @@ const ContactDrawer = ({ use }) => {
               {hover === 0 ? (
                 <motion.div
                   layoutId="form"
-                  className="w-full flex justify-center relative z-10 mt-8  items-center h-fit "
+                  className="w-full flex justify-center relative z-10 mt-4  items-center h-fit "
                 >
                   <form
                     onSubmit={handleSubmit}
@@ -97,7 +104,7 @@ const ContactDrawer = ({ use }) => {
                         return (
                           <div
                             key={idx}
-                            className="w-[45%] gap-2 flex flex-col justify-center items-start"
+                            className="w-[45%]  gap-2 flex flex-col justify-center items-start"
                           >
                             <label
                               className="text-white text-md"
@@ -108,7 +115,7 @@ const ContactDrawer = ({ use }) => {
                             <Input
                               reqired={"true"}
                               className={
-                                "w-full text-white placeholder:text-white/50"
+                                "w-full text-white border-neutral-500 placeholder:text-white/50"
                               }
                               type={item.type}
                               name={item.name}
@@ -124,7 +131,7 @@ const ContactDrawer = ({ use }) => {
                         type={"text"}
                         name={"message"}
                         placeholder="Your Message"
-                        className={"w-[94%] h-44 text-white"}
+                        className={"w-[94%] h-44 text-white border-neutral-500"}
                       />
                     </div>
 
@@ -168,29 +175,33 @@ const ContactDrawer = ({ use }) => {
               ) : (
                 <motion.div
                   layoutId="form"
-                  className="w-full flex justify-center relative z-10 mt-8 items-center"
+                  className="w-full flex justify-center relative z-10 mt-4 items-center"
                 >
                   <motion.div className="w-[90%] flex flex-wrap gap-4 justify-center items-center">
                     {[
                       {
                         name: "Instagram",
-                        link: "https://github.com/meorlwpk",
-                        icons: "./Social/instagram.svg",
+                        link: "https://www.instagram.com/meorlwpk/",
+                        icons: "/Social/instagram.svg",
+                        userName: "@meorlwpk",
                       },
                       {
-                        name: "Linkedin",
+                        name: "LinkedIn",
                         link: "https://www.linkedin.com/in/meorlwpk/",
-                        icons: "/Home/SkillsIcons/github.svg",
+                        icons: "/Social/linkedin.svg",
+                        userName: "@meorlwpk",
                       },
                       {
                         name: "Twitter",
-                        link: "https://www.instagram.com/meorlwpk/",
-                        icons: "./Social/twitter.svg",
+                        link: "https://twitter.com/meorlwpk",
+                        icons: "/Social/twitter.svg",
+                        userName: "@meorlwpk",
                       },
                       {
-                        name: "Linkedin",
-                        link: "https://www.instagram.com/meorlwpk/",
-                        icons: "./Social/linkedin.svg",
+                        name: "GitHub",
+                        link: "https://github.com/meorlwpk",
+                        icons: "/Social/github.svg",
+                        userName: "@meorlwpk",
                       },
                     ].map((item, idx) => {
                       return (
@@ -199,18 +210,73 @@ const ContactDrawer = ({ use }) => {
                           href={item.link}
                           target="_blank"
                           rel="noreferrer noopener"
-                          className="text-white bg-white/10 text-sm py-4 hover:bg-white/20 transition-all duration-300 ease-in-out flex gap-4 px-2 rounded-md w-[45%] cursor-pointer backdrop-blur-2xl"
+                          onMouseEnter={() => setHoverUserName(idx)}
+                          onMouseLeave={() => setHoverUserName(null)}
+                          className="group relative overflow-hidden text-white bg-gradient-to-r from-white/10 to-white/5 text-sm py-4 hover:from-white/15 hover:to-white/10 transition-all duration-300 ease-in-out flex justify-start items-center gap-3 px-4 rounded-xl w-[48%] cursor-pointer backdrop-blur-xl border border-white/10 hover:border-white/20 shadow-lg hover:shadow-xl hover:scale-[1.02]"
                         >
-                          <Image
-                            src={item.icons}
-                            alt={item.name}
-                            width={20}
-                            height={20}
-                          />
-                          <p className="text-md">{item.name}</p>
+                          <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/10 group-hover:bg-white/20 transition-all duration-300 shrink-0">
+                            <Image
+                              src={item.icons}
+                              alt={item.name}
+                              width={20}
+                              height={20}
+                              className="group-hover:scale-110 transition-transform duration-300"
+                            />
+                          </div>
+
+                          {hoverUserName === idx ? (
+                            <motion.p
+                              layoutId={`text-${idx}`}
+                              className="text-[15px] font-medium tracking-wide"
+                            >
+                              {item.userName}
+                            </motion.p>
+                          ) : (
+                            <motion.p
+                              layoutId={`text-${idx}`}
+                              className="text-[15px] font-medium tracking-wide"
+                            >
+                              {item.name}
+                            </motion.p>
+                          )}
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                         </Link>
                       );
                     })}
+
+                    <div className="w-[100%] flex flex-col gap-4">
+                      <Link
+                        href="mailto:yashvishnoi309@gmail.com"
+                        className="group relative overflow-hidden w-full text-white bg-gradient-to-r from-white/10 to-white/5 text-sm py-4 hover:from-white/15 hover:to-white/10 transition-all duration-300 ease-in-out flex justify-start items-center gap-3 px-4 rounded-xl cursor-pointer backdrop-blur-xl border border-white/10 hover:border-white/20 shadow-lg hover:shadow-xl hover:scale-[1.02]"
+                      >
+                        <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/10 group-hover:bg-white/20 transition-all duration-300">
+                          <MdEmail
+                            size={20}
+                            className="group-hover:scale-110 transition-transform duration-300"
+                          />
+                        </div>
+                        <p className="text-[15px] font-medium tracking-wide">
+                          yashvishnoi309@gmail.com
+                        </p>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                      </Link>
+
+                      <div className="group relative overflow-hidden w-full py-4 rounded-xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 flex justify-start px-4 items-center gap-3 backdrop-blur-xl hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300 ease-in-out cursor-pointer border border-white/10 hover:border-white/20 shadow-lg hover:shadow-xl hover:scale-[1.02]">
+                        <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/10 group-hover:bg-white/20 transition-all duration-300">
+                          <Image
+                            src="/Social/cal.svg"
+                            alt="cal.com"
+                            width={20}
+                            height={20}
+                            className="group-hover:scale-110 transition-transform duration-300"
+                          />
+                        </div>
+                        <p className="text-[15px] text-white font-medium tracking-wide">
+                          Book a meeting
+                        </p>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                      </div>
+                    </div>
                   </motion.div>
                 </motion.div>
               )}

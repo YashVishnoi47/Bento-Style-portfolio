@@ -9,7 +9,11 @@ const FooterLink = ({ item }) => {
   return (
     <section className="h-[20%] text-left snap-y snap-mandatory overflow-y-scroll ">
       <div className="relative flex h-full w-full flex-col items-center justify-center gap-5">
-        <Link001 href={item}>{item}</Link001>
+        {item === "ToolBox" ? (
+          <Link001 href={"/info/tools"}>{item}</Link001>
+        ) : (
+          <Link001 href={item}>{item}</Link001>
+        )}
       </div>
     </section>
   );

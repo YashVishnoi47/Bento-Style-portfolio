@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { FaRegCopy } from "react-icons/fa6";
 import { motion, AnimatePresence } from "framer-motion";
 
-const EmailCopy = () => {
+const EmailCopy = ({ contact, cn }) => {
   const [copied, setCopied] = useState(false);
 
   const textToCopy = "yashvishnoi309@gmail.com";
@@ -22,7 +22,9 @@ const EmailCopy = () => {
   return (
     <div
       onClick={handleCopy}
-      className="copy-target flex justify-center items-center text-neutral-300 hover:text-white gap-4 bg-/5 px- w-[280px] h-[56px] py- rounded-lg relative z-50 transition-all duration-500 ease-in-out cursor-pointer white-div-inner-shadow"
+      className={`copy-target flex justify-center items-center text-neutral-300 hover:text-white gap-4 bg-/5 ${
+        contact === true ? "w-full" : "w-[280px]"
+      }  h-[56px] rounded-lg relative z-50 transition-all duration-500 ease-in-out cursor-pointer white-div-inner-shadow ${cn}`}
     >
       <AnimatePresence mode="wait">
         {!copied ? (

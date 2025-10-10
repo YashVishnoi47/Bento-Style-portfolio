@@ -5,11 +5,12 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { useHomePageStore } from "@/stores/HomePageStore";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
+
 
 const Navbar = () => {
   const router = useRouter();
@@ -75,7 +76,7 @@ const Navbar = () => {
       >
         <div className="navsection-1 w-full h-full flex justify-between items-center">
           {/* Left Section */}
-          <div className="navAni-1 lg:w-[28%] w-[50%] h-full gap-4 flex justify-start items-center  border-red-500">
+          <div className="navAni-1 lg:w-[28%] w-[50%] h-full gap-4 flex justify-start items-center border-red-500">
             {/* Logo */}
             <Image
               src="/common/My logo black.svg"
@@ -86,7 +87,7 @@ const Navbar = () => {
           </div>
 
           {/* Middle Section */}
-          <div className="navAni-1 min-w-[33%] h-full hidden lg:flex justify-center items-center  border-red-500">
+          <div className="navAni-1 min-w-[33%] h-full hidden lg:flex justify-center items-center border-red-500">
             <div
               ref={MObNavbarRef}
               className="flex justify-center items-center px-6 py-2 bg--800 rounded-lg"
@@ -95,7 +96,7 @@ const Navbar = () => {
                 { name: "Home", link: "/" },
                 { name: "About", link: "/about" },
                 { name: "Projects", link: "/projects" },
-                { name: "More", link: "" },
+                { name: "More", link: "/" },
               ].map((item, idx) => (
                 <motion.div
                   onClick={() => router.push(`${item.link}`)}
