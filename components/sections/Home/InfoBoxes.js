@@ -16,8 +16,6 @@ const InfoBoxes = () => {
     <div className="commonWidth flex lg:flex-row flex-col lg:justify-between  lg:gap-0 gap-4 items-center">
       {/* Box 1 */}
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeIn" }}
         onClick={() => router.push("/info/tools")}
         onMouseEnter={() => controller.start({ y: -10 })}
@@ -49,8 +47,6 @@ const InfoBoxes = () => {
 
       {/* Box 2 */}
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeIn", delay: 0.3 }}
         onClick={() => router.push("/info/feedback")}
         onMouseEnter={() => controller2.start({ y: -10 })}
@@ -92,8 +88,6 @@ const InfoBoxes = () => {
 
       {/* Box 3 */}
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeIn", delay: 0.8 }}
         onMouseEnter={() => Imagecontroller.start({ scale: 1.1 })}
         onMouseLeave={() => Imagecontroller.start({ scale: 1 })}
