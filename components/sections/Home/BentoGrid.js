@@ -252,7 +252,7 @@ const BentoGrid = () => {
           </div>
 
           {/* Logo Loop */}
-          <div className="w-full flex flex-col justify-center items-center gap-15">
+          {/* <div className="w-full flex flex-col justify-center items-center gap-15">
             <div className="w-full relative ">
               <LogoLoop
                 logos={imageLogos}
@@ -281,7 +281,7 @@ const BentoGrid = () => {
                 ariaLabel="Technology partners"
               />
             </div>
-          </div>
+          </div> */}
 
           <MobileSite />
         </div>

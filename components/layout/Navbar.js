@@ -11,7 +11,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
 
-
 const Navbar = () => {
   const router = useRouter();
   gsap.registerPlugin(ScrollTrigger);
@@ -96,7 +95,7 @@ const Navbar = () => {
                 { name: "Home", link: "/" },
                 { name: "About", link: "/about" },
                 { name: "Projects", link: "/projects" },
-                { name: "More", link: "/" },
+                { name: "Contact", link: "/contact" },
               ].map((item, idx) => (
                 <motion.div
                   onClick={() => router.push(`${item.link}`)}
