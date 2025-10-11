@@ -78,7 +78,7 @@ const Navbar = () => {
           <div className="navAni-1 lg:w-[28%] w-[50%] h-full gap-4 flex justify-start items-center border-red-500">
             {/* Logo */}
             <Image
-              src="/common/My logo black.svg"
+              src="/Common/My logo black.svg"
               width={40}
               height={40}
               alt="logo"
