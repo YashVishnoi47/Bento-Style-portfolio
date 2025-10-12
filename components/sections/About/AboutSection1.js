@@ -62,75 +62,6 @@ const AboutSection1 = () => {
             Beyond the portfolio, that’s the real me.
           </motion.p>
         </div>
-
-        {/* Social Icons */}
-        <div className="w-full flex flex-col justify-start items-start gap-8 px-1 mt-4">
-          {/* <div className="w-1/2 flex gap-3">
-            <FaGithub className="size-5 cursor-pointer" />
-            <FaXTwitter className="size-5 cursor-pointer" />
-            <FaInstagram className="size-5 cursor-pointer" />
-          </div> */}
-
-          <div className="text-sm text-left text-[#b6b6b6] flex justify-end items-center gap-2">
-            {[
-              {
-                icon: (
-                  <FaLinkedinIn
-                    size={15}
-                    className="hover:text-white transition-all duration-300 ease-in-out"
-                  />
-                ),
-                link: "https://www.linkedin.com/in/yash-vishnoi-654318384/",
-                name: "LinkedIn",
-              },
-              {
-                icon: (
-                  <FaGithub
-                    size={15}
-                    className="hover:text-white transition-all duration-300 ease-in-out"
-                  />
-                ),
-                link: "https://github.com/YashVishnoi47",
-                name: "Github",
-              },
-              {
-                icon: (
-                  <FaXTwitter
-                    size={15}
-                    className="hover:text-white transition-all duration-300 ease-in-out"
-                  />
-                ),
-                link: "https://x.com/Yash_Vishnoi7",
-                name: "Twitter",
-              },
-            ].map((item, idx) => (
-              <Tooltip key={idx}>
-                <TooltipTrigger>
-                  <Link
-                    className="flex justify-center items-center gap-2 rounded-sm bg-white/5 px-2 py-1"
-                    href={item.link}
-                    target="_blank"
-                  >
-                    <span className="text-sm">{item.name}</span>
-                    {item.icon}
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent className={"relative z-90 mb-2"}>
-                  {item.name}
-                </TooltipContent>
-              </Tooltip>
-            ))}
-          </div>
-
-          {/* <div className="rounded-md bg-white/10 flex justify-end px-4 py-2 items-center cursor-pointer hover:gap-6 gap-4 transition-all duration-300 ease-in-out">
-            <p className="text-[#B3B3B3] flex justify-center items-center text-[16px] ">
-              Know more
-            </p>
-            <FaArrowRight className="text-[#B3B3B3]" />
-          </div> */}
-
-          <CTAButton2 text={"Know More"} />
-        </div>
       </div>
 
       {/* Right */}
@@ -142,8 +73,8 @@ const AboutSection1 = () => {
             href={"https://github.com/YashVishnoi47"}
           >
             <Image
-              src={"/Common/final logo2.svg"}
-              className="bg-[#ffff]/10 shadow-lg rounded-2xl"
+              src={"/Common/My Logo white.svg"}
+              className="bg-[#ffff/10 shadow-lg rounded-2xl"
               width={400}
               height={400}
               alt="yash"

@@ -3,9 +3,11 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import { useAnimation } from "framer-motion";
+import ContactDrawer from "@/components/layout/ContactDrawer";
+
 const SmallSite = () => {
   return (
-    <div className="w-[250px] h-[170px] flex flex-col items-center gap-4 rounded-tr-xl rounded-tl-xl bg-black">
+    <div className="w-[250px] relative z-1 h-[170px] group-hover:h-[190px] flex flex-col items-center gap-4 rounded-tr-xl rounded-tl-xl bg-black transition-all duration-300 ease-in-out">
       {/* Nav */}
       <div className="w-full h-[30px] flex border-b border-[#2d2d2d] justify-start px-2 items-center gap-2 rounded-tr-xl rounded-tl-xl border">
         {["#FC5753", "#FEBB40", "#34C848"].map((item, idx) => {
@@ -22,7 +24,7 @@ const SmallSite = () => {
       </div>
 
       {/* I-land */}
-      <div className="h-[16px] w-[40%] flex justify-end px-1 items-center bg-white/20 rounded-full">
+      <div className="h-[16px] w-[40%] group-hover:w-[30%] flex justify-end px-1 items-center bg-white/20 rounded-full tramson-all duration-300 ease-in-out">
         <div className="w-[10px] h-[10px] bg-white/50 rounded-full" />
       </div>
 
@@ -35,15 +37,12 @@ const SmallSite = () => {
     </div>
   );
 };
-import LogoLoop from "@/components/LogoLoop";
-import CTAButton2 from "@/components/ui/CTAButtons/CTAButton2";
-import ContactDrawer from "@/components/layout/ContactDrawer";
 
 const MobileSite = () => {
   return (
-    <div className="w-[150px] h-[170px] flex absolute bottom-0 flex-col items-center gap-4 rounded-tr-xl rounded-tl-xl bg-black">
+    <div className="w-[150px] h-[200px] flex absolute bottom-0 flex-col items-center gap-4 rounded-tr-xl rounded-tl-xl bg-black group-hover:h-[210px] transition-all duration-300 ease-in-out">
       {/* I-land */}
-      <div className="h-[16px] w-[40%] mt-3 flex justify-end px-1 items-center bg-white/20 rounded-full">
+      <div className="h-[16px] w-[40%] group-hover:w-[50%] group-hover:bg-white/30 mt-3 flex justify-end px-1 items-center bg-white/20 rounded-full transition-all duration-300 ease-in-out">
         <div className="w-[10px] h-[10px] flex justify-center items-center bg-white/50 rounded-full"></div>
       </div>
 
@@ -51,9 +50,8 @@ const MobileSite = () => {
       <div className="w-full flex flex-col mt-4 gap-2 justify-center items-center overflow-hidden">
         <div className="w-[90%] h-12 rounded-lg bg-white/10"></div>
 
-        <div className="w-[90%] flex justify-center items-center gap-2 h-6 rounded-lg">
-          <div className="w-[48%] flex justify-center items-center gap-2 h-full rounded-lg bg-white/10"></div>
-          <div className="w-[48%] flex justify-center items-center gap-2 h-full rounded-lg bg-white/10"></div>
+        <div className="w-[90%] flex flex-col justify-center items-center gap-2 h-6 rounded-lg">
+          <div className="w-[100%] flex justify-center items-center gap-2 h-full rounded-lg bg-white/10"></div>
         </div>
       </div>
     </div>
@@ -139,7 +137,7 @@ const BentoGrid = () => {
     <section className="BentoWidth relative h-[920px] grid mt-20 grid-cols-4 grid-rows-7 gap-4">
       <div className="col-span-3 row-span-2 flex justify-center items-center gap-4 rounded-2xl">
         {/* Left */}
-        <div className="h-full w-[60%] relative flex flex-col justify-start items-start rounded-2xl p-4 bg-white/5 backdrop-blur-2xl">
+        <div className="h-full w-[60%] relative flex flex-col justify-start items-start rounded-2xl p-4 bg-white/5 backdrop-blur-2xl group">
           <Heading1
             text="Scalable & Future-Proof Solutions"
             size={32}
@@ -152,8 +150,8 @@ const BentoGrid = () => {
         </div>
 
         {/* Right */}
-        <motion.div className="h-full w-[40%] relative flex flex-col gap-4 justify-center items-center rounded-2xl p-4 bg-white/5 backdrop-blur-2xl transition-all duration-300 ease-in-out ">
-          <div className="relative w-30 h-30 flex justify-center items-center group">
+        <motion.div className="h-full w-[40%] relative flex flex-col gap-4 justify-center items-center rounded-2xl p-4 bg-white/5 backdrop-blur-2xl transition-all duration-300 ease-in-out group">
+          <div className="relative w-30 h-30 flex justify-center items-center ">
             {/* Subtle rotating gradient ring */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500/20 via-blue-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
 
@@ -204,7 +202,7 @@ const BentoGrid = () => {
         </motion.div>
       </div>
 
-      <div className="row-span-7 flex flex-col gap-4 justify-center items-center rounded-2xl">
+      <div className="row-span-7 group flex flex-col gap-4 justify-center items-center rounded-2xl">
         <div className="w-full bg-[#ffff]/5 backdrop-blur-2xl border-neutral-800 h-[10%] flex flex-col items-center justify-center rounded-2xl gap-4 p-4">
           <Heading1
             text="Effortless Digital Flow"
@@ -249,39 +247,19 @@ const BentoGrid = () => {
               size={24}
               cl="text-white relative z-99"
             />
-          </div>
 
-          {/* Logo Loop */}
-          {/* <div className="w-full flex flex-col justify-center items-center gap-15">
-            <div className="w-full relative ">
-              <LogoLoop
-                logos={imageLogos}
-                speed={120}
-                direction="left"
-                logoHeight={20}
-                gap={40}
-                pauseOnHover={false}
-                scaleOnHover={false}
-                fadeOut
-                fadeOutColor="#111111"
-                ariaLabel="Technology partners"
+            <div className="w-full flex justify-center items-center mt-15">
+              <div className="w-[50%] border border-white/10" />
+              <Image
+                className="relative z-[999] bg-black p-4 rounded-full transition-all duration-300 ease-in-out"
+                src="/Common/developer.svg"
+                width={100}
+                height={100}
+                alt="arrow"
               />
+              <div className="w-[50%] border border-white/10" />
             </div>
-            <div className="w-full relative ">
-              <LogoLoop
-                logos={imageLogos}
-                speed={120}
-                direction="right"
-                logoHeight={20}
-                gap={40}
-                pauseOnHover={false}
-                scaleOnHover={false}
-                fadeOut
-                fadeOutColor="#111111"
-                ariaLabel="Technology partners"
-              />
-            </div>
-          </div> */}
+          </div>
 
           <MobileSite />
         </div>
@@ -449,9 +427,16 @@ const BentoGrid = () => {
         </div>
       </div>
 
-      <div className="row-span-3 col-span-2 overflow-hidden rounded-2xl BentoGridBgGradiant">
-        <div className="w-full h-full bg-black/2 backdrop-blur-2xl flex flex-col justify-between items-center">
-          <h1 className="text-[36px] mt-6 font-bold text-center BentoGridTextGradiant">
+      <div className="row-span-3 relative col-span-2 overflow-hidden rounded-2xl group ">
+        <div
+          className="absolute inset-0 z-0 rounded-2xl"
+          style={{
+            background:
+              "repeating-linear-gradient(45deg, #000 0px, #111 2px, #000 4px, #222 6px) BentoGridBgGradiant",
+          }}
+        />
+        <div className="w-full h-full bg-blac bacdrop-blur-2xl flex flex-col justify-between items-center">
+          <h1 className="text-[36px] relative z-1 mt-6 font-bold text-center BentoGridTextGradiant">
             Design to Production Website Developement
           </h1>
 
@@ -459,21 +444,21 @@ const BentoGrid = () => {
         </div>
       </div>
 
-      <div className="bg-white/5 relative row-span-2 col-span-2 p-4 rounded-2xl flex gap-8 flex-col justify-center items-center">
-        <div
+      <div className="bg-white/5 backdrop-blur-2xl relative row-span-2 col-span-2 p-4 rounded-2xl flex gap-8 flex-col justify-center items-center">
+        {/* <div
           className="absolute inset-0 z-0 rounded-2xl BentoInnerShadow"
           style={{
             background:
               "repeating-linear-gradient(45deg, #000 0px, #111 2px, #000 4px, #222 6px)",
           }}
-        />
+        /> */}
         <Heading2
           text="Future-Ready Websites That Elevate Your Brand"
           size={34}
           cl="text-white relative z-99 w-[85%]"
         />
 
-      <ContactDrawer use="bent" />
+        <ContactDrawer use="bent" />
       </div>
     </section>
   );

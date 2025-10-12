@@ -7,15 +7,14 @@ import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 import { Textarea } from "../ui/textarea";
 import Link from "next/link";
-import { icons, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import Image from "next/image";
 import EmailCopy from "../ui/CTAButtons/EmailCopy";
 import { MdEmail } from "react-icons/md";
 
 const ContactDrawer = ({ use }) => {
-  const [state, handleSubmit, reset] = useForm("meorlwpk");
+  const [state, handleSubmit] = useForm("meorlwpk");
   const [hover, sethover] = useState(0);
-  const [hoverUserName, setHoverUserName] = useState(null);
 
   return (
     <div className="">
@@ -30,30 +29,21 @@ const ContactDrawer = ({ use }) => {
           <Drawer.Content className="rounded-2xl w-[40%] mb-2 h-fit fixed bottom-0 left-1/2 -translate-x-1/2 outline-none">
             <Drawer.Title />
 
-            <div className="h-[550px] border-2 border-neutral-700 py-4 relative z-99 w-full rounded-2xl bg-back backdrop-blur-2xl flex items-center flex-col">
-              <div
-                className="absolute inset-0 z-0 rounded-2xl"
-                style={{
-                  backgroundColor: "#0a0a0a",
-                  backgroundImage: `
-       radial-gradient(circle at 25% 25%, #222222 0.5px, transparent 1px),
-       radial-gradient(circle at 75% 75%, #111111 0.5px, transparent 1px)
-     `,
-                  backgroundSize: "10px 10px",
-                  imageRendering: "pixelated",
-                }}
-              />
-              {/* <div className="w-full flex justify-center items-center absolute top-4">
+            <div className="h-[580px] border-2 border-neutral-700 py-4 relative z-99 w-full rounded-2xl bg-back backdrop-blur-2xl flex items-center flex-col">
+              <div className="w-full flex justify-center items-center absolute top-4">
                 <div className="w-[30%] h-[3px] rounded-full bg-white/50" />
-              </div> */}
+              </div>
 
               {/* Badge */}
-              <div className="relative z-19 px-2 bg-white/10 backdrop-blur-2xl py-1 mt-2 rounded-sm">
-                <p className="text-white text-sm">Feel free to reach me out</p>
+              <div className="relative z-19 px-2 bg-white/10 backdrop-blur-2xl py-1 mt-8 rounded-sm">
+                <p className="text-white font-normal text-md">
+                  Feel free to reach me out
+                </p>
+                {/* <p className="text-white font-normal text-md">Connect with me</p> */}
               </div>
 
               {/* Toggle */}
-              <div className="mt-4 w-[90%] h-12 border border-neutral-900 rounded-md bg-black/90 flex  justify-center items-center relative text-white">
+              <div className="mt-6 w-[90%] h-12 border border-neutral-900 rounded-md bg-black/90 flex  justify-center items-center relative text-white">
                 {["Fill a form", "Socials"].map((item, idx) => {
                   return (
                     <div
@@ -104,7 +94,7 @@ const ContactDrawer = ({ use }) => {
                         return (
                           <div
                             key={idx}
-                            className="w-[45%]  gap-2 flex flex-col justify-center items-start"
+                            className="w-[45%] backdrop-blur-2xl gap-2 flex flex-col justify-center items-start"
                           >
                             <label
                               className="text-white text-md"
@@ -115,7 +105,7 @@ const ContactDrawer = ({ use }) => {
                             <Input
                               reqired={"true"}
                               className={
-                                "w-full text-white border-neutral-500 placeholder:text-white/50"
+                                "w-full text-white focus-visible:ring-0 focus:ring-0 hover:ring-0 border-neutral-500 placeholder:text-white/50"
                               }
                               type={item.type}
                               name={item.name}
@@ -126,12 +116,19 @@ const ContactDrawer = ({ use }) => {
                       })}
                     </div>
 
-                    <div className="w-full flex justify-center items-center">
+                    <div className="w-full flex-col flex gap-2 justify-center items-center">
+                      <div className="w-full flex  items-center justify-start px-6">
+                        <label className="text-white text-md" htmlFor="message">
+                          Message
+                        </label>
+                      </div>
                       <Textarea
                         type={"text"}
                         name={"message"}
                         placeholder="Your Message"
-                        className={"w-[94%] h-44 text-white border-neutral-500"}
+                        className={
+                          "w-[94%] h-44 text-white border-neutral-500 backdrop-blur-2xl focus-visible:ring-0 focus:ring-0 hover:ring-0"
+                        }
                       />
                     </div>
 
@@ -180,28 +177,28 @@ const ContactDrawer = ({ use }) => {
                   <motion.div className="w-[90%] flex flex-wrap gap-4 justify-center items-center">
                     {[
                       {
-                        name: "Instagram",
-                        link: "https://www.instagram.com/meorlwpk/",
-                        icons: "/Social/instagram.svg",
-                        userName: "@meorlwpk",
-                      },
-                      {
-                        name: "LinkedIn",
-                        link: "https://www.linkedin.com/in/meorlwpk/",
-                        icons: "/Social/linkedin.svg",
-                        userName: "@meorlwpk",
-                      },
-                      {
                         name: "Twitter",
                         link: "https://twitter.com/meorlwpk",
-                        icons: "/Social/twitter.svg",
-                        userName: "@meorlwpk",
+                        icons: "/Social/twitter2.svg",
+                        userName: "@Yash_Vishnoi7",
                       },
                       {
                         name: "GitHub",
-                        link: "https://github.com/meorlwpk",
-                        icons: "/Social/github.svg",
-                        userName: "@meorlwpk",
+                        link: "https://github.com/YashVishnoi47",
+                        icons: "/Home/SkillsIcons/github.svg",
+                        userName: "@YashVishnoi47",
+                      },
+                      {
+                        name: "LinkedIn",
+                        link: "https://www.linkedin.com/in/yash-vishnoi-654318384/",
+                        icons: "/Social/linkedin.svg",
+                        userName: "@Yash Vishnoi",
+                      },
+                      {
+                        name: "LinkedIn",
+                        link: "https://www.linkedin.com/in/yash-vishnoi-654318384/",
+                        icons: "/Social/linkedin.svg",
+                        userName: "@Yash Vishnoi",
                       },
                     ].map((item, idx) => {
                       return (
@@ -210,8 +207,6 @@ const ContactDrawer = ({ use }) => {
                           href={item.link}
                           target="_blank"
                           rel="noreferrer noopener"
-                          onMouseEnter={() => setHoverUserName(idx)}
-                          onMouseLeave={() => setHoverUserName(null)}
                           className="group relative overflow-hidden text-white bg-gradient-to-r from-white/10 to-white/5 text-sm py-4 hover:from-white/15 hover:to-white/10 transition-all duration-300 ease-in-out flex justify-start items-center gap-3 px-4 rounded-xl w-[48%] cursor-pointer backdrop-blur-xl border border-white/10 hover:border-white/20 shadow-lg hover:shadow-xl hover:scale-[1.02]"
                         >
                           <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/10 group-hover:bg-white/20 transition-all duration-300 shrink-0">
@@ -224,21 +219,10 @@ const ContactDrawer = ({ use }) => {
                             />
                           </div>
 
-                          {hoverUserName === idx ? (
-                            <motion.p
-                              layoutId={`text-${idx}`}
-                              className="text-[15px] font-medium tracking-wide"
-                            >
-                              {item.userName}
-                            </motion.p>
-                          ) : (
-                            <motion.p
-                              layoutId={`text-${idx}`}
-                              className="text-[15px] font-medium tracking-wide"
-                            >
-                              {item.name}
-                            </motion.p>
-                          )}
+                          <p className="text-[15px] font-medium tracking-wide">
+                            {item.name}
+                          </p>
+
                           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                         </Link>
                       );
