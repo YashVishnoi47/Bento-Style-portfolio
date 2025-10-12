@@ -11,17 +11,41 @@ import {
 } from "@/components/ui/tooltip";
 import Image from "next/image";
 import CTAButton2 from "@/components/ui/CTAButtons/CTAButton2";
-import { motion, useScroll } from "framer-motion";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import { Tilt } from "@/components/motion-primitives/tilt";
 
 const Section5 = () => {
+  const mainRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: mainRef,
+    offset: ["start end", "end start"],
+  });
+
+  const transformScale = useSpring(
+    useTransform(scrollYProgress, [0, 0.4], [0.9, 1]),
+    {
+      stiffness: 100,
+      damping: 20,
+      mass: 1,
+    }
+  );
+
   return (
-    <div
+    <motion.div
+      transition={{ duration: 1, delay: 0.2 }}
+      style={{ scale: transformScale }}
+      ref={mainRef}
       id="about"
-      className="commonWidth relative py-20 flex lg:flex-row flex-col justify-between items-center gap-8"
+      className="commonWith w-[1540px] max-w-[1540px] py-20 relative rounded-2xl flex lg:flex-row flex-col justify-center items-center gap-8 bg-black/90 backdrop-blur-2xl"
     >
       {/* Left */}
-      <div className="lg:w-[57%] w-full min-h-[450px] rounded-2xl p-8 flex flex-col gap-6">
+      <div className="lg:w-[50%] w-full min-h-[450px] rounded-2xl p-8 flex flex-col gap-6">
         {/* Heading */}
         <div className="w-full flex flex-col justify-start items-start">
           <p className="textFont text-[14px] font-semibold text-left subHeadingGradiant">
@@ -142,7 +166,7 @@ const Section5 = () => {
             href={"https://github.com/YashVishnoi47"}
           >
             <Image
-              src={"/Common/My logo black.svg"}
+              src={"/Common/My logo white.svg"}
               className="shadow-lg rounded-2xl"
               width={400}
               height={400}
@@ -151,7 +175,7 @@ const Section5 = () => {
           </Link>
         </Tilt>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

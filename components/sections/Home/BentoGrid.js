@@ -432,7 +432,7 @@ const BentoGrid = () => {
           className="absolute inset-0 z-0 rounded-2xl"
           style={{
             background:
-              "repeating-linear-gradient(45deg, #000 0px, #111 2px, #000 4px, #222 6px) BentoGridBgGradiant",
+              "repeating-linear-gradient(45deg, #000 0px, #111 2px, #000 4px, #222 6px)",
           }}
         />
         <div className="w-full h-full bg-blac bacdrop-blur-2xl flex flex-col justify-between items-center">
