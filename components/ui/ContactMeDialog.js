@@ -29,7 +29,6 @@ const ContactMeDialog = () => {
         >
           <Sheet.Header className="bg-black" />
           <Sheet.Content className="bg-black w-full border flex justify-center  items-center text-white">
-            {/* Your sheet content goes here */}
             <div className="h-[200px]"></div>
           </Sheet.Content>
         </Sheet.Container>

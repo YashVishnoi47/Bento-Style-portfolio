@@ -24,7 +24,6 @@ export default function Home() {
           imageRendering: "pixelated",
         }}
       />
-
       {/* Home */}
       <Section1 />
 
@@ -44,6 +43,7 @@ export default function Home() {
         <Section5 />
       </section>
 
+      
       {/* Velocity text */}
       {/* <div className="w-full min-h-[80vh]  flex justify-center items-center">
         <ScrollVelocity
@@ -56,8 +56,6 @@ export default function Home() {
           className="custom-scroll-text text-[#E0E0E0] select-none"
         />
       </div> */}
-
-
       <section className="w-full relative flex flex-col gap-10 mt-50 mb-50 z-99 justify-center items-center">
         <div className="w-full flex flex-col justify-center items-center gap-1">
           <p className="textFont text-[14px] font-semibold text-left subHeadingGradiant">
@@ -70,7 +68,6 @@ export default function Home() {
         </div>
         <InfoBoxes />
       </section>
-
       <Footer />
     </div>
   );

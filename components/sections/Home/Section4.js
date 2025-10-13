@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import React from "react";
-
+import React, { useRef } from "react";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 const Section4 = () => {
   const skills = [
@@ -95,9 +95,24 @@ const Section4 = () => {
       icon: "./Home/SkillsIcons/linux.svg",
     },
   ];
+  const skillsref = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: skillsref,
+    offset: ["start end", "end start"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0.2, 0.4], [0, 1]);
+
+  const translateY = useSpring(
+    useTransform(scrollYProgress, [0.2, 0.6], [100, 0])
+  );
+
+  const scale = useSpring(useTransform(scrollYProgress, [0, 1], [0.9, 1]));
 
   return (
     <div
+      ref={skillsref}
       id="services"
       className="commonWidth min-h-[700px] flex gap-12 flex-col justify-center items-center rounded-2xl py-4"
     >
@@ -112,17 +127,21 @@ const Section4 = () => {
       </div>
 
       {/* Skills */}
-      <div className="w-[90%] flex flex-wrap gap-x-6 gap-y-6 py-4 justify-center items-center border-white ">
+      <div className="w-[90%] flex flex-wrap gap-x-4 gap-y-4 py-4 justify-center items-center border-white ">
         {skills.map((item, idx) => {
           return (
-            <div
+            <motion.div
+              style={{ opacity, y: translateY, scale: scale }}
+              transition={{ delay: 0.5 * idx }}
               key={idx}
               className="w-[100px] h-[100px] hover:-translate-y-2  relative z-99 shrink-0 bg-white/5 backdrop-blur-xl border border-white/15 flex flex-col justify-center items-center gap-4 rounded-lg hover:shadow-md  shadow-white/50 transition-all duration-200 ease-in-out cursor-default"
             >
               <Image src={item.icon} width={30} height={30} alt="Logo" />
 
-              <p className="text-sm text-white text-center leading-none">{item.name}</p>
-            </div>
+              <p className="text-sm text-white text-center leading-none">
+                {item.name}
+              </p>
+            </motion.div>
           );
         })}
       </div>

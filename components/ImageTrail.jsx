@@ -971,7 +971,7 @@ export default function ImageTrail({ items = [], variant = 1 }) {
 
   return (
     <div
-      className="w-full h-full relative z-[9999999] rounded-lg bg-transparent overflow-visible"
+      className="w-full h-full relative z-[100] rounded-lg bg-transparent overflow-visible"
       ref={containerRef}>
       {items.map((url, i) => (
         <div

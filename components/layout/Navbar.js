@@ -1,15 +1,16 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import MenuButton from "../ui/MenuButton";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { useHomePageStore } from "@/stores/HomePageStore";
-import { motion } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
+import { Lateef } from "next/font/google";
 
 const Navbar = () => {
   const router = useRouter();
@@ -67,7 +68,7 @@ const Navbar = () => {
   return (
     <nav className="w-full absolute h-full flex justify-center items-start">
       <motion.div
-        ref={NavbarRef}
+        // ref={NavbarRef}
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.1 }}

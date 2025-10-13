@@ -42,7 +42,7 @@ const Section5 = () => {
       style={{ scale: transformScale }}
       ref={mainRef}
       id="about"
-      className="commonWith w-[1540px] max-w-[1540px] py-20 relative rounded-2xl flex lg:flex-row flex-col justify-center items-center gap-8 bg-black/90 backdrop-blur-2xl"
+      className="commonWith w-[1540px] max-w-[1540px] py-20 relative rounded-2xl flex lg:flex-row flex-col justify-center items-center gap-8 bg-gradient-to-r from-[#7893C6]/10 to-[#7893C6]/30 backdrop-blur-2xl"
     >
       {/* Left */}
       <div className="lg:w-[50%] w-full min-h-[450px] rounded-2xl p-8 flex flex-col gap-6">
